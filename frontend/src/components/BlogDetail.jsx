@@ -36,7 +36,7 @@ export default function BlogDetail({ post }) {
   return (
     <main className="text-[#3D1F0D] min-h-screen bg-[#F5EBE0]" style={{ fontFamily: BODY }}>
       {/* ══ Hero ══ */}
-      <section className="relative h-[52vh] md:h-[62vh] min-h-[380px] overflow-hidden">
+      <section className="relative h-[46vh] xs:h-[50vh] sm:h-[56vh] md:h-[62vh] lg:h-[68vh] min-h-[320px] sm:min-h-[380px] overflow-hidden">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.08 }}
@@ -56,16 +56,16 @@ export default function BlogDetail({ post }) {
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#3D1F0D]/90 via-[#3D1F0D]/25 to-[#3D1F0D]/30" />
 
-        <nav className="absolute top-6 md:top-8 left-6 md:left-16 flex items-center gap-2.5 text-[10px] md:text-xs tracking-[0.25em] uppercase text-white/70 z-10">
+        {/* <nav className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-16 flex items-center gap-2 sm:gap-2.5 text-[9px] sm:text-[10px] md:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase text-white/70 z-10">
           <Link href="/" className="hover:text-[#C8972B] transition-colors">Home</Link>
           <span className="text-white/30">/</span>
           <Link href="/blog" className="hover:text-[#C8972B] transition-colors">Journal</Link>
-        </nav>
+        </nav> */}
 
-        <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-6 md:px-16 pb-14 md:pb-20">
+        <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 sm:px-6 md:px-16 pb-10 sm:pb-14 md:pb-20">
           {post.category && (
             <motion.p
-              className="text-[#C8972B] text-[11px] md:text-xs tracking-[0.4em] uppercase mb-5 font-semibold"
+              className="text-[#C8972B] text-[10px] sm:text-[11px] md:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-5 font-semibold"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -73,7 +73,7 @@ export default function BlogDetail({ post }) {
             </motion.p>
           )}
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.08] mb-4 max-w-4xl text-white"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] sm:leading-[1.08] mb-3 sm:mb-4 max-w-[90%] sm:max-w-2xl md:max-w-4xl text-white break-words"
             style={{ fontFamily: DISPLAY }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,8 +85,8 @@ export default function BlogDetail({ post }) {
       </section>
 
       {/* ══ Meta bar ══ */}
-      <section className="max-w-6xl mx-auto px-6 md:px-0 -mt-px">
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-6 text-xs tracking-widest uppercase text-[#3D1F0D]/50 border-b border-[#C8972B]/15">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-0 -mt-px">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-1.5 sm:gap-y-2 py-4 sm:py-6 text-[10px] sm:text-xs tracking-widest uppercase text-[#3D1F0D]/50 border-b border-[#C8972B]/15 text-center">
           {post.author && <span>{post.author}</span>}
           {post.publishedAt && <span>{formatDate(post.publishedAt)}</span>}
           {post.readTime && <span>{post.readTime}</span>}
@@ -94,26 +94,26 @@ export default function BlogDetail({ post }) {
       </section>
 
       {/* ══ Content ══ */}
-      <section className="max-w-6xl mx-auto px-6 md:px-0 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-0 py-10 sm:py-16 md:py-20">
         {post.excerpt && (
-          <p className="text-lg md:text-xl text-[#3D1F0D]/70 font-light leading-relaxed mb-10 italic">
+          <p className="text-base sm:text-lg md:text-xl text-[#3D1F0D]/70 font-light leading-relaxed mb-6 sm:mb-10 italic">
             {post.excerpt}
           </p>
         )}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {paragraphs.map((p, i) => (
-            <p key={i} className="text-base md:text-lg leading-[1.9] text-[#3D1F0D]/80 font-light">
+            <p key={i} className="text-sm sm:text-base md:text-lg leading-[1.8] sm:leading-[1.9] text-[#3D1F0D]/80 font-light">
               {p}
             </p>
           ))}
         </div>
 
         {tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-[#C8972B]/15">
+          <div className="flex flex-wrap gap-2 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#C8972B]/15">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] tracking-widest uppercase px-3 py-1.5 rounded-full bg-[#C8972B]/10 text-[#C8972B] font-medium"
+                className="text-[10px] sm:text-[11px] tracking-widest uppercase px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-[#C8972B]/10 text-[#C8972B] font-medium"
               >
                 {tag}
               </span>
@@ -124,15 +124,21 @@ export default function BlogDetail({ post }) {
 
       {/* ══ Gallery (optional) ══ */}
       {gallery.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6 md:px-0 pb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="w-8 h-px bg-[#C8972B]" />
-            <p className="text-[10px] tracking-[0.4em] uppercase text-[#C8972B] font-semibold">Gallery</p>
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-0 pb-12 sm:pb-20">
+          <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <span className="w-6 sm:w-8 h-px bg-[#C8972B]" />
+            <p className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#C8972B] font-semibold">Gallery</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {gallery.map((img, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-sm overflow-hidden">
-                <Image src={resolveImageUrl(img)} alt={`${post.title} — image ${i + 1}`} fill className="object-cover" sizes="33vw" />
+                <Image
+                  src={resolveImageUrl(img)}
+                  alt={`${post.title} — image ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
             ))}
           </div>
@@ -140,12 +146,12 @@ export default function BlogDetail({ post }) {
       )}
 
       {/* ══ Back to journal CTA ══ */}
-      <section className="border-t border-[#C8972B]/15 py-16 text-center">
+      <section className="border-t border-[#C8972B]/15 py-10 sm:py-16 text-center px-4">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-[#3D1F0D]/50 hover:text-[#C8972B] text-xs tracking-[0.3em] uppercase transition-colors font-light group"
+          className="inline-flex items-center gap-2 text-[#3D1F0D]/50 hover:text-[#C8972B] text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase transition-colors font-light group"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:-translate-x-1 transition-transform">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:-translate-x-1 transition-transform shrink-0">
             <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           Back to Journal

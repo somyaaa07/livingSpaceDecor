@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import HeroSection from "@/components/service/wardrobes/HeroSection";
 import WardrobeShowcaseSection from "@/components/service/wardrobes/WardrobeShowcaseSection";
@@ -11,7 +11,7 @@ import FAQSection from "@/components/service/wardrobes/FAQSection";
 import Details from "@/components/service/wardrobes/Details";
 
 export const metadata = {
-  title: " Wardrobe Design Solutions - Living Space Decor",
+  title: "Wardrobe Design Solutions - Living Space Decor",
 
   description:
     "Explore modern wardrobe designs with premium materials, finishes, smart storage accessories, sliding wardrobes, walk-in wardrobes, and custom wardrobe solutions for every.",

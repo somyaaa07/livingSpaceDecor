@@ -24,7 +24,6 @@ const poppins = Poppins({
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-
   const isAdmin = pathname.startsWith("/admin");
 
   return (
@@ -36,14 +35,14 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className="min-h-screen flex flex-col">
-       <ScrollToTop />
-        { <Navbar />}
+        <ScrollToTop />
+        {!isAdmin && <Navbar />}
 
         <main className="flex-1">{children}</main>
 
-        {  <Footer />}
-        {<ShareButton />}
-         <BackToTop />
+        {!isAdmin && <Footer />}
+        {!isAdmin && <ShareButton />}
+        {!isAdmin && <BackToTop />}
       </body>
     </html>
   );

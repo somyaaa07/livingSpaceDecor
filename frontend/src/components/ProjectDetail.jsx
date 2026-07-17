@@ -28,7 +28,7 @@ function Lightbox({ images, current, onClose, onPrev, onNext, onSelect }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] bg-[#3D1F0D]/95 flex items-center justify-center backdrop-blur-lg px-4"
+      className="fixed inset-0 z-[100] bg-[#3D1F0D]/95 flex items-center justify-center backdrop-blur-lg px-2 sm:px-4"
       onClick={onClose}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -36,17 +36,17 @@ function Lightbox({ images, current, onClose, onPrev, onNext, onSelect }) {
     >
       <motion.button
         onClick={onClose}
-        className="absolute top-5 right-5 md:top-8 md:right-8 text-white/60 hover:text-[#C8972B] transition-colors z-10"
+        className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-8 md:right-8 text-white/60 hover:text-[#C8972B] transition-colors z-10"
         aria-label="Close"
         whileHover={{ scale: 1.1, rotate: 90 }}
       >
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+        <svg width="24" height="24" className="sm:w-7 sm:h-7" viewBox="0 0 32 32" fill="none">
           <path d="M8 8L24 24M24 8L8 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       </motion.button>
 
       <div
-        className="absolute top-6 md:top-8 left-1/2 -translate-x-1/2 text-white/40 text-[10px] md:text-xs tracking-[0.3em] uppercase font-light"
+        className="absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 text-white/40 text-[9px] sm:text-[10px] md:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase font-light"
         style={{ fontFamily: BODY }}
       >
         {String(current + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
@@ -57,16 +57,16 @@ function Lightbox({ images, current, onClose, onPrev, onNext, onSelect }) {
           e.stopPropagation();
           onPrev();
         }}
-        className="absolute left-2 md:left-8 text-white/50 hover:text-[#C8972B] transition-colors"
+        className="absolute left-1 sm:left-2 md:left-8 text-white/50 hover:text-[#C8972B] transition-colors"
         aria-label="Previous image"
         whileHover={{ scale: 1.15, x: -4 }}
       >
-        <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+        <svg width="24" height="24" className="sm:w-8 sm:h-8 md:w-[34px] md:h-[34px]" viewBox="0 0 40 40" fill="none">
           <path d="M25 8L13 20L25 32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </motion.button>
 
-      <div className="relative w-full max-w-5xl mx-14 md:mx-24" onClick={(e) => e.stopPropagation()}>
+      <div className="relative w-full max-w-5xl mx-10 sm:mx-14 md:mx-24" onClick={(e) => e.stopPropagation()}>
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -86,16 +86,16 @@ function Lightbox({ images, current, onClose, onPrev, onNext, onSelect }) {
           e.stopPropagation();
           onNext();
         }}
-        className="absolute right-2 md:right-8 text-white/50 hover:text-[#C8972B] transition-colors"
+        className="absolute right-1 sm:right-2 md:right-8 text-white/50 hover:text-[#C8972B] transition-colors"
         aria-label="Next image"
         whileHover={{ scale: 1.15, x: 4 }}
       >
-        <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+        <svg width="24" height="24" className="sm:w-8 sm:h-8 md:w-[34px] md:h-[34px]" viewBox="0 0 40 40" fill="none">
           <path d="M15 8L27 20L15 32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </motion.button>
 
-      <div className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 gap-2 max-w-[90vw] md:max-w-lg overflow-x-auto px-4">
+      <div className="hidden sm:flex absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 gap-1.5 sm:gap-2 max-w-[85vw] md:max-w-lg overflow-x-auto px-4">
         {images.map((img, i) => (
           <motion.button
             key={i}
@@ -103,7 +103,7 @@ function Lightbox({ images, current, onClose, onPrev, onNext, onSelect }) {
               e.stopPropagation();
               onSelect(i);
             }}
-            className={`relative flex-shrink-0 w-14 h-10 overflow-hidden transition-all duration-300 border rounded-[2px] ${
+            className={`relative flex-shrink-0 w-12 h-9 sm:w-14 sm:h-10 overflow-hidden transition-all duration-300 border rounded-[2px] ${
               i === current ? "ring-1 ring-[#C8972B] opacity-100 border-[#C8972B]" : "opacity-30 hover:opacity-70 border-white/20"
             }`}
             whileHover={{ scale: 1.05 }}
@@ -166,7 +166,7 @@ const ctaImage = allImages[2] || allImages[0];
 
       <main className="text-[#3D1F0D] min-h-screen bg-[#F5EBE0] overflow-x-clip" style={{ fontFamily: BODY }}>
         {/* ══ Hero ══ */}
-        <section className="relative h-[64vh] sm:h-[72vh] md:h-[82vh] min-h-[440px] md:min-h-[620px] overflow-hidden">
+        <section className="relative h-[52vh] xs:h-[58vh] sm:h-[72vh] md:h-[82vh] min-h-[380px] sm:min-h-[440px] md:min-h-[620px] overflow-hidden">
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1.08 }}
@@ -179,7 +179,7 @@ const ctaImage = allImages[2] || allImages[0];
           <div className="absolute inset-0 bg-gradient-to-t from-[#3D1F0D]/85 via-[#3D1F0D]/15 to-[#3D1F0D]/35" />
 
           <motion.nav
-            className="absolute top-6 md:top-8 left-6 md:left-16 flex items-center gap-2.5 text-[10px] md:text-xs tracking-[0.25em] uppercase text-white/70 z-10"
+            className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-16 right-4 sm:right-6 flex flex-wrap items-center gap-x-2 gap-y-1 sm:gap-2.5 text-[9px] sm:text-[10px] md:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase text-white/70 z-10"
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -188,12 +188,12 @@ const ctaImage = allImages[2] || allImages[0];
             <span className="text-white/30">/</span>
             <Link href="/portfolio" className="hover:text-[#C8972B] transition-colors">Portfolio</Link>
             <span className="text-white/30">/</span>
-            <span className="text-[#C8972B] font-medium">{project.name}</span>
+            <span className="text-[#C8972B] font-medium truncate max-w-[140px] sm:max-w-none">{project.name}</span>
           </motion.nav>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-16">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-16">
             <motion.p
-              className="text-[#C8972B] text-[11px] md:text-xs tracking-[0.4em] uppercase mb-5 font-semibold"
+              className="text-[#C8972B] text-[10px] sm:text-[11px] md:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-5 font-semibold"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
@@ -201,7 +201,7 @@ const ctaImage = allImages[2] || allImages[0];
               {project.type ? `${project.type} Project` : "Interior Project"}
             </motion.p>
             <motion.h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-normal leading-[1.02] mb-5 max-w-5xl text-white"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.06] sm:leading-[1.02] mb-3 sm:mb-5 max-w-[92%] sm:max-w-3xl md:max-w-5xl text-white break-words"
               style={{ fontFamily: DISPLAY }}
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ const ctaImage = allImages[2] || allImages[0];
               {project.name}
             </motion.h1>
             <motion.p
-              className="text-white/70 text-xs md:text-sm tracking-[0.25em] uppercase font-light"
+              className="text-white/70 text-[10px] xs:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase font-light"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
@@ -221,20 +221,20 @@ const ctaImage = allImages[2] || allImages[0];
         </section>
 
         {/* ══ Floating Spec Card ══ */}
-        <section className="relative px-4 sm:px-8 md:px-16">
+        <section className="relative px-3 xs:px-4 sm:px-8 md:px-16">
           <motion.div
-            className="relative z-10 -mt-14 md:-mt-16 max-w-6xl mx-auto bg-white/70 backdrop-blur-md border border-[#C8972B]/20 rounded-sm shadow-[0_20px_60px_-15px_rgba(61,31,13,0.25)]"
+            className="relative z-10 -mt-10 xs:-mt-12 md:-mt-16 max-w-6xl mx-auto bg-white/70 backdrop-blur-md border border-[#C8972B]/20 rounded-sm shadow-[0_20px_60px_-15px_rgba(61,31,13,0.25)]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             <div className="grid grid-cols-2 md:grid-cols-5 divide-y divide-x divide-[#C8972B]/15 md:divide-y-0">
               {specs.map((s) => (
-                <div key={s.label} className="flex flex-col gap-1.5 px-5 md:px-6 py-6 md:py-8">
-                  <span className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-[#C8972B] font-semibold">
+                <div key={s.label} className="flex flex-col gap-1 sm:gap-1.5 px-3 xs:px-4 sm:px-5 md:px-6 py-4 xs:py-5 sm:py-6 md:py-8">
+                  <span className="text-[8px] xs:text-[9px] md:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#C8972B] font-semibold">
                     {s.label}
                   </span>
-                  <span className="text-[#3D1F0D] text-base md:text-lg font-normal" style={{ fontFamily: DISPLAY }}>
+                  <span className="text-[#3D1F0D] text-sm xs:text-base md:text-lg font-normal break-words" style={{ fontFamily: DISPLAY }}>
                     {s.value}
                   </span>
                 </div>
@@ -244,18 +244,18 @@ const ctaImage = allImages[2] || allImages[0];
         </section>
 
         {/* ══ Description + Highlights ══ */}
-        <section className="max-w-6xl mx-auto px-6 md:px-16 pt-20 md:pt-28 pb-20 md:pb-24 grid md:grid-cols-[1.1fr_0.9fr] gap-14 md:gap-20 items-start">
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-16 pt-12 xs:pt-16 sm:pt-20 md:pt-28 pb-12 xs:pb-16 sm:pb-20 md:pb-24 grid md:grid-cols-[1.1fr_0.9fr] gap-8 sm:gap-14 md:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <span className="w-8 h-px bg-[#C8972B]" />
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#C8972B] font-semibold">About This Project</p>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <span className="w-6 sm:w-8 h-px bg-[#C8972B]" />
+              <p className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#C8972B] font-semibold">About This Project</p>
             </div>
-            <p className="text-[#3D1F0D]/75 leading-[1.9] text-base md:text-lg font-light">
+            <p className="text-[#3D1F0D]/75 leading-[1.8] sm:leading-[1.9] text-sm sm:text-base md:text-lg font-light">
               {project.description}
                  {/* "A thoughtfully designed space that balances aesthetic beauty with everyday functionality, crafted with meticulous attention to detail and the finest materials." */}
             </p>
@@ -263,21 +263,21 @@ const ctaImage = allImages[2] || allImages[0];
 
           {project.highlights?.length > 0 && (
             <motion.div
-              className="bg-white/50 border border-[#C8972B]/15 rounded-sm p-7 md:p-9"
+              className="bg-white/50 border border-[#C8972B]/15 rounded-sm p-5 xs:p-6 sm:p-7 md:p-9"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-4 mb-7">
-                <span className="w-8 h-px bg-[#C8972B]" />
-                <p className="text-[10px] tracking-[0.4em] uppercase text-[#C8972B] font-semibold">Project Highlights</p>
+              <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-7">
+                <span className="w-6 sm:w-8 h-px bg-[#C8972B]" />
+                <p className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#C8972B] font-semibold">Project Highlights</p>
               </div>
-              <ul className="space-y-5">
+              <ul className="space-y-4 sm:space-y-5">
                 {project.highlights.map((h, i) => (
                   <motion.li
                     key={i}
-                    className="flex items-start gap-4 text-[#3D1F0D]/65 text-sm leading-relaxed font-light"
+                    className="flex items-start gap-3 sm:gap-4 text-[#3D1F0D]/65 text-sm leading-relaxed font-light"
                     initial={{ opacity: 0, x: 14 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
@@ -294,11 +294,11 @@ const ctaImage = allImages[2] || allImages[0];
 
         {/* ══ Gallery ══ */}
         {allImages.length > 1 && (
-          <section className="max-w-6xl mx-auto px-6 md:px-16 pb-20 md:pb-28">
-            <div className="flex items-center gap-4 mb-10">
-              <span className="w-8 h-px bg-[#C8972B]" />
+          <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-16 pb-12 xs:pb-16 sm:pb-20 md:pb-28">
+            <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10">
+              <span className="w-6 sm:w-8 h-px bg-[#C8972B]" />
               <motion.p
-                className="text-[10px] tracking-[0.4em] uppercase text-[#C8972B] font-semibold"
+                className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#C8972B] font-semibold"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -308,7 +308,7 @@ const ctaImage = allImages[2] || allImages[0];
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] sm:auto-rows-[180px] md:auto-rows-[200px] gap-3 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[110px] xs:auto-rows-[130px] sm:auto-rows-[180px] md:auto-rows-[200px] gap-2 xs:gap-3 md:gap-4">
               {allImages.map((img, i) => {
                 const isFeature = i === 0;
                 return (
@@ -329,15 +329,15 @@ const ctaImage = allImages[2] || allImages[0];
                       alt={`${project.name} — photo ${i + 1}`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes={isFeature ? "60vw" : "25vw"}
+                      sizes={isFeature ? "(max-width: 480px) 100vw, 60vw" : "(max-width: 480px) 50vw, 25vw"}
                     />
                     <div className="absolute inset-0 bg-[#3D1F0D]/0 group-hover:bg-[#3D1F0D]/35 transition-all duration-500 flex items-center justify-center">
                       <motion.div
-                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/70 rounded-full p-3 bg-white/5 backdrop-blur-sm"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/70 rounded-full p-2 sm:p-3 bg-white/5 backdrop-blur-sm"
                         initial={{ scale: 0.8 }}
                         whileHover={{ scale: 1 }}
                       >
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                        <svg width="16" height="16" className="sm:w-[18px] sm:h-[18px]" viewBox="0 0 20 20" fill="none">
                           <path
                             d="M8 3H3v5M17 8V3h-5M12 17h5v-5M3 12v5h5"
                             stroke="white"
@@ -355,11 +355,11 @@ const ctaImage = allImages[2] || allImages[0];
 
             <motion.button
               onClick={() => openLightbox(0)}
-              className="mt-8 flex items-center gap-3 text-[#3D1F0D]/40 hover:text-[#C8972B] text-xs tracking-[0.3em] uppercase transition-colors font-light"
+              className="mt-6 sm:mt-8 flex items-center gap-2.5 sm:gap-3 text-[#3D1F0D]/40 hover:text-[#C8972B] text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase transition-colors font-light"
               whileHover={{ x: 8 }}
             >
               <span>View All {allImages.length} Photos</span>
-              <span className="w-10 h-px bg-current" />
+              <span className="w-8 sm:w-10 h-px bg-current" />
             </motion.button>
           </section>
         )}
@@ -367,9 +367,9 @@ const ctaImage = allImages[2] || allImages[0];
         {/* ══ Client Quote ══ */}
         {project.clientQuote && (
           <section className="border-y border-[#C8972B]/15 bg-gradient-to-r from-[#C8972B]/[0.06] via-transparent to-[#C8972B]/[0.06]">
-            <div className="max-w-3xl mx-auto px-6 md:px-16 py-20 md:py-28 text-center">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 md:px-16 py-14 xs:py-16 sm:py-20 md:py-28 text-center">
               <motion.div
-                className="text-[#C8972B]/20 text-[100px] md:text-[140px] leading-none mb-2 -mt-8 md:-mt-12 select-none"
+                className="text-[#C8972B]/20 text-[64px] xs:text-[80px] sm:text-[100px] md:text-[140px] leading-none mb-2 -mt-4 xs:-mt-6 sm:-mt-8 md:-mt-12 select-none"
                 style={{ fontFamily: DISPLAY }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -379,7 +379,7 @@ const ctaImage = allImages[2] || allImages[0];
                 "
               </motion.div>
               <motion.blockquote
-                className="text-xl md:text-3xl font-normal text-[#3D1F0D]/85 leading-relaxed -mt-10 md:-mt-12"
+                className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-normal text-[#3D1F0D]/85 leading-relaxed -mt-6 xs:-mt-8 sm:-mt-10 md:-mt-12"
                 style={{ fontFamily: DISPLAY }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -389,29 +389,29 @@ const ctaImage = allImages[2] || allImages[0];
                 {project.clientQuote.text}
               </motion.blockquote>
               <motion.div
-                className="mt-9 flex items-center justify-center gap-5 md:gap-6"
+                className="mt-7 sm:mt-9 flex items-center justify-center gap-3 sm:gap-5 md:gap-6"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <span className="w-10 md:w-12 h-px bg-gradient-to-r from-[#C8972B] to-transparent" />
+                <span className="w-8 sm:w-10 md:w-12 h-px bg-gradient-to-r from-[#C8972B] to-transparent" />
                 <div className="text-center">
-                  <p className="text-[#3D1F0D] text-sm font-medium tracking-wider">{project.clientQuote.author}</p>
+                  <p className="text-[#3D1F0D] text-xs sm:text-sm font-medium tracking-wider">{project.clientQuote.author}</p>
                   {project.clientQuote.title && (
-                    <p className="text-[#3D1F0D]/40 text-[11px] tracking-widest uppercase mt-1.5 font-light">
+                    <p className="text-[#3D1F0D]/40 text-[10px] sm:text-[11px] tracking-widest uppercase mt-1 sm:mt-1.5 font-light">
                       {project.clientQuote.title}
                     </p>
                   )}
                 </div>
-                <span className="w-10 md:w-12 h-px bg-gradient-to-l from-[#C8972B] to-transparent" />
+                <span className="w-8 sm:w-10 md:w-12 h-px bg-gradient-to-l from-[#C8972B] to-transparent" />
               </motion.div>
             </div>
           </section>
         )}
 
         {/* ══ CTA — full-bleed image ══ */}
-        <section className="relative w-full min-h-[480px] md:min-h-[600px] flex items-center overflow-hidden">
+        <section className="relative w-full min-h-[420px] xs:min-h-[460px] sm:min-h-[520px] md:min-h-[600px] flex items-center overflow-hidden">
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1.06 }}
@@ -427,9 +427,9 @@ const ctaImage = allImages[2] || allImages[0];
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#3D1F0D]/95 via-[#3D1F0D]/75 to-[#3D1F0D]/45" />
 
-          <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 py-20 md:py-0 text-center">
+          <div className="relative z-10 w-full px-4 xs:px-6 sm:px-10 md:px-16 py-14 xs:py-16 sm:py-20 md:py-0 text-center">
             <motion.p
-              className="text-[#C8972B] text-[11px] md:text-xs tracking-[0.4em] uppercase mb-5 font-semibold"
+              className="text-[#C8972B] text-[10px] sm:text-[11px] md:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-5 font-semibold"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -438,7 +438,7 @@ const ctaImage = allImages[2] || allImages[0];
               Start Your Project
             </motion.p>
             <motion.h2
-              className="text-4xl sm:text-5xl md:text-7xl font-normal text-white mb-6 max-w-3xl mx-auto leading-[1.08]"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-normal text-white mb-4 sm:mb-6 max-w-3xl mx-auto leading-[1.1] sm:leading-[1.08]"
               style={{ fontFamily: DISPLAY }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -450,7 +450,7 @@ const ctaImage = allImages[2] || allImages[0];
               <span className="text-[#C8972B]">Let's Create Yours.</span>
             </motion.h2>
             <motion.p
-              className="text-white/70 max-w-md mx-auto mb-10 leading-relaxed text-sm font-light"
+              className="text-white/70 max-w-md mx-auto mb-8 sm:mb-10 leading-relaxed text-xs sm:text-sm font-light"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -461,15 +461,15 @@ const ctaImage = allImages[2] || allImages[0];
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-5"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Link href="/contact">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <motion.div
-                  className="inline-flex items-center rounded-md gap-3 bg-[#C8972B] text-[#3D1F0D] px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 active:scale-95 shadow-lg shadow-black/20 hover:shadow-[0_0_40px_rgba(200,151,43,0.45)]"
+                  className="inline-flex items-center justify-center rounded-md gap-3 bg-[#C8972B] text-[#3D1F0D] px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 active:scale-95 shadow-lg shadow-black/20 hover:shadow-[0_0_40px_rgba(200,151,43,0.45)] w-full sm:w-auto"
                   whileHover={{ y: -2 }}
                 >
                   Book Consultation
@@ -477,14 +477,14 @@ const ctaImage = allImages[2] || allImages[0];
               </Link>
               <Link
                 href="/portfolio"
-                className="text-white/70 hover:text-[#C8972B] text-xs tracking-[0.3em] uppercase transition-colors inline-flex items-center gap-2 font-light group"
+                className="text-white/70 hover:text-[#C8972B] text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase transition-colors inline-flex items-center gap-2 font-light group"
               >
                 <motion.svg
-                  width="16"
-                  height="16"
+                  width="14"
+                  height="14"
                   viewBox="0 0 16 16"
                   fill="none"
-                  className="group-hover:-translate-x-1 transition-transform"
+                  className="sm:w-4 sm:h-4 group-hover:-translate-x-1 transition-transform shrink-0"
                 >
                   <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                 </motion.svg>

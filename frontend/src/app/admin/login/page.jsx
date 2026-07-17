@@ -34,18 +34,15 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5EBE0] p-6 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-[#F5EBE0] p-4 sm:p-6 relative overflow-hidden">
       {/* Ambient background accents */}
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-[#C8972B]/[0.08] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute -bottom-40 -right-20 w-[400px] h-[400px] bg-[#3D1F0D]/[0.05] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative w-full max-w-4xl grid md:grid-cols-[1.05fr_1fr] rounded-2xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(26,15,8,0.35)] border border-[#3D1F0D]/8 animate-[fadeUp_0.6s_ease-out]">
         {/* Left branding panel */}
-        <div className="hidden md:flex flex-col justify-between bg-[#1A0F08]/90 p-11 relative isolate">
-      
+        <div className="hidden md:flex flex-col justify-between bg-[#1A0F08]/90 p-9 lg:p-11 relative isolate">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1A0F08]" />
-
-     
 
           <div className="relative">
             {/* Monogram mark */}
@@ -57,7 +54,7 @@ export default function AdminLoginPage() {
               <span className="w-[22px] h-px bg-[#C8972B] inline-block" />
               Studio Admin
             </p>
-            <h2 className="font-display text-[2.6rem] text-[#F5EBE0] leading-[1.1] mb-5">
+            <h2 className="font-display text-[2.1rem] lg:text-[2.6rem] text-[#F5EBE0] leading-[1.1] mb-5">
               Manage your
               <br />
               <span className="text-[#C8972B]">craft</span> with ease.
@@ -77,18 +74,18 @@ export default function AdminLoginPage() {
         </div>
 
         {/* Right form panel */}
-        <div className="bg-[#F5EBE0] p-8 sm:p-11 md:p-12 flex flex-col justify-center">
-          <div className="md:hidden flex items-center gap-3 mb-7">
+        <div className="bg-[#F5EBE0] p-6 sm:p-9 md:p-11 lg:p-12 flex flex-col justify-center">
+          <div className="md:hidden flex items-center gap-3 mb-6 sm:mb-7">
             <div className="w-8 h-8 rounded-full border border-[#C8972B]/40 flex items-center justify-center shrink-0">
               <span className="font-display text-[#C8972B] text-sm leading-none">S</span>
             </div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#C8972B] font-semibold">
+            <p className="text-[9.5px] sm:text-[10px] tracking-[0.3em] uppercase text-[#C8972B] font-semibold">
               Studio Admin
             </p>
           </div>
 
-          <h1 className="font-display text-[2rem] text-[#3D1F0D] mb-1.5">Welcome back</h1>
-          <p className="text-[13.5px] text-[#3D1F0D]/50 mb-8">
+          <h1 className="font-display text-[1.65rem] sm:text-[2rem] text-[#3D1F0D] mb-1.5">Welcome back</h1>
+          <p className="text-[13px] sm:text-[13.5px] text-[#3D1F0D]/50 mb-7 sm:mb-8">
             Sign in to manage your projects and posts.
           </p>
 
@@ -141,7 +138,7 @@ export default function AdminLoginPage() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-1 text-[12.5px]">
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-1 text-[12.5px]">
               <label className="flex items-center gap-2 text-[#3D1F0D]/55 cursor-pointer select-none">
                 <input
                   type="checkbox"
