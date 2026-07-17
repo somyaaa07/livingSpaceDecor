@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <g stroke="#C69C4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Outer Circle -->
+    <circle cx="32" cy="28" r="14"></circle>
+
+    <!-- Glass Shelf Structure -->
+    <line x1="32" y1="14" x2="32" y2="42"></line>
+    <line x1="18" y1="28" x2="46" y2="28"></line>
+
+    <!-- Diagonal Sections -->
+    <line x1="22" y1="20" x2="42" y2="36"></line>
+    <line x1="42" y1="20" x2="22" y2="36"></line>
+
+  </g>
+</svg>

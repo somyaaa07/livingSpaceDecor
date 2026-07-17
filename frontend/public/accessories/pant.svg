@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <g stroke="#C69C4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Top Rod -->
+    <line x1="16" y1="16" x2="48" y2="16"></line>
+
+    <!-- Side Supports -->
+    <line x1="18" y1="16" x2="18" y2="24"></line>
+    <line x1="46" y1="16" x2="46" y2="24"></line>
+
+    <!-- Hanging Pants -->
+    <path d="M22 24V44"></path>
+    <path d="M28 24V44"></path>
+    <path d="M34 24V44"></path>
+    <path d="M40 24V44"></path>
+
+    <!-- Bottom Fold -->
+    <path d="M22 44L25 48L28 44"></path>
+    <path d="M34 44L37 48L40 44"></path>
+
+  </g>
+</svg>

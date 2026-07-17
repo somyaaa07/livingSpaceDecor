@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <g stroke="#B8851F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Rack -->
+    <line x1="20" y1="20" x2="20" y2="108"></line>
+    <line x1="108" y1="20" x2="108" y2="108"></line>
+
+    <line x1="20" y1="55" x2="108" y2="55"></line>
+    <line x1="20" y1="90" x2="108" y2="90"></line>
+
+    <!-- Top Left Shoe -->
+    <path d="M32 47
+             C38 40 48 40 58 45
+             L68 50
+             H78
+             C82 50 86 52 88 55
+             H32Z"></path>
+
+    <!-- Top Right Shoe -->
+    <path d="M68 47
+             C74 40 84 40 94 45
+             L102 50
+             H108
+             C110 50 112 52 114 55
+             H68Z"></path>
+
+    <!-- Bottom Left Shoe -->
+    <path d="M32 82
+             C38 75 48 75 58 80
+             L68 85
+             H78
+             C82 85 86 87 88 90
+             H32Z"></path>
+
+    <!-- Bottom Right Shoe -->
+    <path d="M68 82
+             C74 75 84 75 94 80
+             L102 85
+             H108
+             C110 85 112 87 114 90
+             H68Z"></path>
+
+  </g>
+</svg>

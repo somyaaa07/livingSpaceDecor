@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <g stroke="#B8851F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top Rail -->
+    <rect x="28" y="18" width="72" height="10" rx="3"></rect>
+
+    <!-- Left Holder -->
+    <rect x="38" y="28" width="14" height="14" rx="2"></rect>
+    <line x1="45" y1="42" x2="45" y2="52"></line>
+
+    <!-- Right Holder -->
+    <rect x="76" y="28" width="14" height="14" rx="2"></rect>
+    <line x1="83" y1="42" x2="83" y2="52"></line>
+
+    <!-- Left Tie -->
+    <path d="M40 52H50L48 60L50 108L45 116L40 108L42 60Z"></path>
+
+    <!-- Right Tie -->
+    <path d="M78 52H88L86 60L88 108L83 116L78 108L80 60Z"></path>
+  </g>
+</svg>

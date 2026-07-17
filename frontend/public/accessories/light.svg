@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <g stroke="#C69C4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bulb -->
+    <path d="M32 14C24.8 14 19 19.8 19 27C19 32.2 21.8 36.2 26 38.8V44H38V38.8C42.2 36.2 45 32.2 45 27C45 19.8 39.2 14 32 14Z"></path>
+
+    <!-- Base -->
+    <line x1="28" y1="48" x2="36" y2="48"></line>
+    <line x1="29" y1="52" x2="35" y2="52"></line>
+
+    <!-- Rays -->
+    <line x1="32" y1="8" x2="32" y2="4"></line>
+    <line x1="20" y1="13" x2="17" y2="10"></line>
+    <line x1="44" y1="13" x2="47" y2="10"></line>
+    <line x1="16" y1="27" x2="12" y2="27"></line>
+    <line x1="48" y1="27" x2="52" y2="27"></line>
+  </g>
+</svg>

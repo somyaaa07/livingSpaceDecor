@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <g stroke="#C69C4D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Drawer -->
+    <rect x="26" y="44" width="76" height="44" rx="12"></rect>
+
+    <!-- Drawer Handle -->
+    <circle cx="64" cy="66" r="4" fill="#C69C4D"></circle>
+
+    <!-- Jewellery Ring -->
+    <circle cx="64" cy="28" r="12"></circle>
+    <path d="M64 12L70 22L64 28L58 22L64 12Z"></path>
+
+    <!-- Base Line -->
+    <line x1="40" y1="88" x2="88" y2="88"></line>
+  </g>
+</svg>

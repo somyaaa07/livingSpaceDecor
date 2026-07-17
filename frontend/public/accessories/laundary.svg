@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <g stroke="#C69C4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Basket -->
+    <path d="M20 22H44L42 48H22L20 22Z"></path>
+
+    <!-- Handle -->
+    <path d="M26 22V16H38V22"></path>
+
+    <!-- Grid -->
+    <line x1="28" y1="28" x2="28" y2="42"></line>
+    <line x1="36" y1="28" x2="36" y2="42"></line>
+
+    <line x1="24" y1="32" x2="40" y2="32"></line>
+    <line x1="24" y1="38" x2="40" y2="38"></line>
+
+  </g>
+</svg>
