@@ -490,8 +490,8 @@ export default function Footer() {
 
             <ContactRow
               label="Email"
-              value="info@livingspacedecor.com"
-              href="mailto:info@livingspacedecor.com"
+              value="info@livingspacedekor.com"
+              href="mailto:info@livingspacedekor.com"
               icon={
                 <svg
                   width="16"
