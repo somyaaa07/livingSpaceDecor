@@ -20,13 +20,13 @@ export default function Sidebar() {
   const initial = name.charAt(0).toUpperCase();
 
   return (
-    <aside className="w-60 shrink-0 bg-[#1A0F08] text-[#F5EBE0] flex flex-col p-7 sticky top-0 h-screen">
+    <aside className="w-80 shrink-0 bg-[#1A0F08] text-[#F5EBE0] flex flex-col p-7 sticky top-0 h-screen">
       <div className="mb-10">
         <p className="flex items-center gap-3 text-[10px] tracking-[0.35em] uppercase text-[#C8972B]/90 font-semibold mb-2.5">
           <span className="w-[22px] h-px bg-[#C8972B] inline-block" />
-          Studio
+          Interior Decor
         </p>
-        <h2 className="font-display text-2xl text-[#F5EBE0]">Admin</h2>
+        <h2 className="font-display text-2xl text-[#F5EBE0]">Admin Panel</h2>
       </div>
 
       <nav className="flex flex-col gap-1 flex-1">
@@ -65,7 +65,7 @@ export default function Sidebar() {
         </div>
         <button
           onClick={logout}
-          className="flex items-center gap-2 text-xs uppercase tracking-wide text-[#F5EBE0]/45 hover:text-[#C8972B] transition-colors"
+          className="flex items-center gap-5 ml-2 mt-10 text-sm uppercase tracking-wide text-[#F5EBE0]/85 hover:text-[#C8972B] transition-colors"
         >
           <LogOut className="w-3.5 h-3.5" />
           Sign out
@@ -74,3 +74,4 @@ export default function Sidebar() {
     </aside>
   );
 }
+
