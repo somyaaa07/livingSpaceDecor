@@ -9,7 +9,15 @@ import KitchenCTA from "@/components/service/modular-kitchen/DesignIdeas/Kitchen
 import FAQSection from "@/components/service/modular-kitchen/DesignIdeas/FAQSection";
 import KitchenBudgetCalculator from "@/components/service/modular-kitchen/KitchenBudgetCalculator";
 
+export const metadata = {
+  title: "Modern Modular Kitchen Design Ideas - Living Space Decor",
 
+  description:
+    "Explore modern modular kitchen design ideas, layouts, smart storage solutions, premium materials, finishes, and color combinations. Get inspiration for L-shaped, U-shaped, parallel, straight, and island kitchens.",
+ alternates: {
+    canonical: "/kitchen-design",
+  },
+}
 
 export default function KitchenPage() {
   return (
