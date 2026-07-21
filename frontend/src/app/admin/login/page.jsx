@@ -138,20 +138,7 @@ export default function AdminLoginPage() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-1 text-[12.5px]">
-              <label className="flex items-center gap-2 text-[#3D1F0D]/55 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={remember}
-                  onChange={(e) => setRemember(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded-[3px] border-[#3D1F0D]/25 text-[#C8972B] focus:ring-[#C8972B]/30 accent-[#C8972B]"
-                />
-                Remember me
-              </label>
-              <a href="#" className="text-[#C8972B] hover:text-[#3D1F0D] transition-colors font-medium">
-                Forgot password?
-              </a>
-            </div>
+            
 
             {error && (
               <p className="bg-red-50 border border-red-200 text-red-600 text-xs rounded-lg px-3.5 py-2.5">

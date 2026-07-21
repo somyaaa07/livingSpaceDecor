@@ -9,7 +9,7 @@ BlackListedToken.init({
         allowNull:false,
         unique:true
     },
-    expriesAt:{
+    expiresAt:{
         type:DataTypes.DATE,
         allowNull:false
     }

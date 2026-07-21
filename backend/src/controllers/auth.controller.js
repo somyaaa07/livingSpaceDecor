@@ -93,7 +93,7 @@ export const changePassword = async (req,res,next)=>{
             message:"password must be at least 8 characters"
         })
     }
-    const admin = await Admin.finByPk(req.admin.id)
+    const admin = await Admin.findByPk(req.admin.id)
 
     const valid = await bcrypt.compare(currentPassword,admin.passwordHash);
 
