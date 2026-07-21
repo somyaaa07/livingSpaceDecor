@@ -5,7 +5,7 @@ class BlackListedToken extends Model {}
 
 BlackListedToken.init({
     token:{
-        type:DataTypes.TEXT,
+        type:DataTypes.STRING(500),
         allowNull:false,
         unique:true
     },
