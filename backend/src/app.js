@@ -106,8 +106,7 @@ app.use('/api/blog',blogRoutes);
 app.use('/api/upload',uploadRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/admin',adminRoutes);
-app.use('/', sendQuoteRoute);
-
+app.use('/api', sendQuoteRoute);
 app.use(notFound); 
 app.use(errorHandler);
 
