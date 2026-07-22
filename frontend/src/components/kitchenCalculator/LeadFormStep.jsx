@@ -112,7 +112,7 @@ export default function LeadFormStep({ formData, setFormData, onBack }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://livingspacedecor.in/send-quote", {
+      const response = await fetch("https://livingspacedecor.in/api/send-quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

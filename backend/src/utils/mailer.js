@@ -19,10 +19,19 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Server start hote hi SMTP connection verify karo
+transporter.verify((error, success) => {
+  if (error) {
+    console.log("❌ SMTP connection failed:", error);
+  } else {
+    console.log("✅ SMTP server is ready to send emails");
+  }
+});
+
 // Builds an HTML table from any object of form fields
 function buildFieldsHTML(fields) {
   return Object.entries(fields)
-    .filter(([key]) => key !== "formType") 
+    .filter(([key]) => key !== "formType")
     .map(
       ([key, value]) => `
         <tr>
@@ -37,6 +46,8 @@ function buildFieldsHTML(fields) {
 
 // formType examples: 'Contact Form', 'Wardrobe Cost Calculator', 'Kitchen Calculator', 'BHK Calculator', 'Modal Form'
 export async function sendFormMail(formType, fields) {
+  console.log(` Sending mail for: ${formType}`, fields);
+
   const mailOptions = {
     from: `"${SMTP_FROM_NAME}" <${SMTP_FROM}>`,
     replyTo: fields.email || SMTP_FROM,
@@ -50,5 +61,7 @@ export async function sendFormMail(formType, fields) {
     `,
   };
 
-  return transporter.sendMail(mailOptions);
+  const info = await transporter.sendMail(mailOptions);
+  console.log("✅ Mail sent successfully. Message ID:", info.messageId);
+  return info;
 }

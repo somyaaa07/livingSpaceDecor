@@ -17,7 +17,7 @@ export default function QuoteCalculator() {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const res = await fetch("https://livingspacedecor.in/send-quote", {
+      const res = await fetch("https://livingspacedecor.in/api/send-quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

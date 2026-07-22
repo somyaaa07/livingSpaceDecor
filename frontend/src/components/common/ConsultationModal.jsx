@@ -6,7 +6,7 @@ import { useState } from "react";
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────────
 // Node/Express backend endpoint
-const API_ENDPOINT = "https://livingspacedecor.in/send-quote";
+const API_ENDPOINT = "https://livingspacedecor.in/api/send-quote";
 // ───────────────────────────────────────────────────────────────────────────────
 
 const INITIAL_FORM = {

@@ -63,7 +63,7 @@ export default function ContactSection() {
 
     try {
       const response = await fetch(
-        "https://livingspacedecor.in/send-quote",
+        "https://livingspacedecor.in/api/send-quote",
         {
           method: "POST",
           headers: {
