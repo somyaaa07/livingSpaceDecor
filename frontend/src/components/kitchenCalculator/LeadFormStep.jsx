@@ -112,32 +112,30 @@ export default function LeadFormStep({ formData, setFormData, onBack }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(
-        "https://livingspacedecor.in/send-kitchen-quote.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            dimension: formData.dimension,
-            shape: formData.shape,
-            package: formData.package,
-
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            pincode: formData.pincode,
-          }),
+      const response = await fetch("https://livingspacedecor.in/send-quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          formType: "Kitchen Calculator",
+          dimension: formData.dimension,
+          shape: formData.shape,
+          package: formData.package,
+
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          pincode: formData.pincode,
+        }),
+      });
 
       const result = await response.json();
 
       if (result.success) {
         setSubmitSuccess(true);
       } else {
-        alert(result.message || "Failed to submit enquiry");
+        alert(result.error || "Failed to submit enquiry");
       }
     } catch (error) {
       console.error(error);

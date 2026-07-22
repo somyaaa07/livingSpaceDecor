@@ -19,9 +19,7 @@ export default function ContactStep({
   };
 
   const isValid =
-    formData.name?.trim() &&
-    formData.phone?.trim() &&
-    formData.email?.trim();
+    formData.name?.trim() && formData.phone?.trim() && formData.email?.trim();
 
   const handleSubmit = async () => {
     if (!isValid) return;
@@ -41,30 +39,28 @@ export default function ContactStep({
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(
-        "https://livingspacedecor.in/send-wardrobe-quote.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            type: formData.type,
-            dimension: formData.dimension,
-            finish: formData.finish,
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-          }),
-        }
-      );
+      const res = await fetch("https://livingspacedecor.in/send-quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "Wardrobe Cost Calculator",
+          type: formData.type,
+          dimension: formData.dimension,
+          finish: formData.finish,
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+        }),
+      });
 
       const data = await res.json();
 
       if (data.success) {
         nextStep();
       } else {
-        alert(data.message || "Something went wrong. Please try again.");
+        alert(data.error || "Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Wardrobe Quote Error:", error);
@@ -180,16 +176,12 @@ export default function ContactStep({
               </p>
 
               <p>
-                <span className="font-semibold text-[#3D1F0D]">
-                  Size:
-                </span>{" "}
+                <span className="font-semibold text-[#3D1F0D]">Size:</span>{" "}
                 {formData.dimension}
               </p>
 
               <p>
-                <span className="font-semibold text-[#3D1F0D]">
-                  Finish:
-                </span>{" "}
+                <span className="font-semibold text-[#3D1F0D]">Finish:</span>{" "}
                 {formData.finish}
               </p>
             </div>

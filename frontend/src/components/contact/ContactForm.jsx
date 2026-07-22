@@ -63,13 +63,14 @@ export default function ContactSection() {
 
     try {
       const response = await fetch(
-        "https://livingspacedecor.in/send-contact.php",
+        "https://livingspacedecor.in/send-quote",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            formType: "Contact Form",
             name: formData.name,
             phone: formData.phone,
             city: formData.city,
@@ -92,7 +93,7 @@ export default function ContactSection() {
           message: "",
         });
       } else {
-        alert(data.message || "Failed to submit enquiry");
+        alert(data.error || "Failed to submit enquiry");
       }
     } catch (error) {
       console.error(error);

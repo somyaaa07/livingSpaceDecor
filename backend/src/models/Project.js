@@ -16,7 +16,7 @@ Project.init({
     slug: {
         type: DataTypes.STRING(180),
         allowNull: false,
-        unique: true
+        unique: 'project_slug_unique'
     },
     type: {
         type: DataTypes.STRING(150),
