@@ -180,14 +180,13 @@ export const designIdeas = [
     },
     ctaVideo: "/mandir.mp4",
     moodboard: [
-      "/image_old/mandir_design1.webp",
-      "/image_old/mandir_design2.webp",
+    
 
       "/image/mandir_design4.webp",
       "/image/mandir_design5.webp",
       "/image/mandir_design7.webp",
-      "/image/mandir_design3.webp",
-      "/image/mandir_design.webp",
+     
+      "/image/mandir_design6.webp",
     ],
   },
   {
