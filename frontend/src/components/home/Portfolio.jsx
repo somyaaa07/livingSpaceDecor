@@ -6,37 +6,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const portfolio = [
-  {
-    id: 1,
-    title: "Luxury Living Room",
-    image: "/image/living_room8.webp",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Modern Bedroom ",
-    image: "/image/bedroom_design12.webp",
-  },
-  {
-    id: 3,
-    title: "Premium Kitchen",
-    image: "/image/kitchen_design1.webp",
-  },
-  {
-    id: 4,
-    title: "Kids Room",
-    image: "/image/kids_room4.webp",
-  },
-  {
-    id: 5,
-    title: "Contemporary Dining",
-    image: "/image/dining_room2.webp",
-  },
-];
+const IMAGE_URL =
+  process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") ||
+  "http://localhost:5000";
 
-export default function LatestProjectsPremium() {
+export default function Portfolio({ portfolio }) {
   const [hoveredId, setHoveredId] = useState(null);
+  // Prevent errors if no projects are returned
+  if (!portfolio || portfolio.length === 0) {
+  return (
+    <section className="py-24 text-center">
+      <h2 className="text-2xl font-semibold">
+        No Projects Available
+      </h2>
+      
+    </section>
+  );
+}
 
   return (
     <section className="px-6 lg:px-14 py-32 bg-gradient-to-b from-[#F5EBE0]/20 to-transparent">
@@ -82,12 +68,19 @@ export default function LatestProjectsPremium() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/portfolio" className="block h-full">
+            <Link
+              href={`/portfolio/${portfolio[0].slug}`}
+              className="block h-full"
+            >
               <Image
-                src={portfolio[0].image}
-                alt={portfolio[0].title}
+                src={
+                  portfolio[0].image
+                    ? `${IMAGE_URL}${portfolio[0].image}`
+                    : "/image/placeholder.webp"
+                }
+                alt={portfolio[0].name}
                 fill
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
               {/* gradient overlay - always visible so text stays readable */}
@@ -100,7 +93,7 @@ export default function LatestProjectsPremium() {
                     Featured
                   </span>
                   <p className="font-heading text-[32px] md:text-[40px] font-medium text-white mb-2">
-                    {portfolio[0].title}
+                    {portfolio[0].name}
                   </p>
                 </div>
                 <motion.div
@@ -133,7 +126,7 @@ export default function LatestProjectsPremium() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          {portfolio.slice(1, 5).map((p, i) => (
+          {portfolio.slice(1).map((p, i) => (
             <motion.div
               key={p.id}
               className="group relative overflow-hidden rounded-lg h-[320px] cursor-pointer"
@@ -145,12 +138,16 @@ export default function LatestProjectsPremium() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Link href="/portfolio" className="block h-full">
+              <Link href={`/portfolio/${p.slug}`} className="block h-full">
                 <Image
-                  src={p.image}
-                  alt={p.title}
+                  src={
+                    p.image
+                      ? `${IMAGE_URL}${p.image}`
+                      : "/image/placeholder.webp"
+                  }
+                  alt={p.name}
                   fill
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* gradient overlay - always visible so text stays readable */}
@@ -160,7 +157,7 @@ export default function LatestProjectsPremium() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
                   <div className="flex-1">
                     <p className="font-heading text-[22px] font-medium text-white mb-1">
-                      {p.title}
+                      {p.name}
                     </p>
                   </div>
                   <motion.div
@@ -184,7 +181,7 @@ export default function LatestProjectsPremium() {
 
       {/* CTA Section */}
       <motion.div
-        className="mt-20 flex justify-center"
+        className="mt-14 sm:mt-20 flex justify-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -192,21 +189,35 @@ export default function LatestProjectsPremium() {
       >
         <Link
           href="/portfolio"
-          className="group relative overflow-hidden  px-10 py-4 bg-[#3D1F0D] text-white uppercase tracking-[0.18em] text-xs font-semibold flex items-center gap-3 shadow-[0_10px_30px_rgba(61,31,13,0.25)]"
+          className="group relative overflow-hidden
+      px-5 sm:px-10
+      py-3 sm:py-4
+      bg-[#3D1F0D]
+      text-white
+      uppercase
+      text-[10px] sm:text-xs
+      tracking-[0.08em] sm:tracking-[0.15em]
+      font-semibold
+      inline-flex
+      items-center
+      gap-2 sm:gap-3
+      rounded-md
+      shadow-[0_10px_30px_rgba(61,31,13,0.25)]"
         >
-         
-          {/* Text */}
-          <span className="relative z-10 group-hover:tracking-[0.22em] transition-all duration-300">
+          <span className="relative z-10 whitespace-nowrap transition-all duration-300 group-hover:tracking-[0.12em]">
             Explore Full Portfolio
           </span>
 
-          {/* Icon */}
           <motion.div
-            className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-[#C8972B] text-[#3D1F0D]"
+            className="relative z-10 flex items-center justify-center
+        w-6 h-6 sm:w-8 sm:h-8
+        rounded-full
+        bg-[#C8972B]
+        text-[#3D1F0D]"
             whileHover={{ rotate: 45 }}
             transition={{ duration: 0.3 }}
           >
-            <ArrowUpRight size={16} />
+            <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
           </motion.div>
         </Link>
       </motion.div>

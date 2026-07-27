@@ -19,7 +19,7 @@ const BRAND_STATS = [
     img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
   },
   {
-    number: "10+",
+    number: "12+",
     label: "Refining the Craft",
     title: "Years of Living Innovation",
     description:
