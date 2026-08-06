@@ -10,14 +10,34 @@ import FAQSection from "@/components/service/modular-kitchen/DesignIdeas/FAQSect
 import KitchenBudgetCalculator from "@/components/service/modular-kitchen/KitchenBudgetCalculator";
 
 export const metadata = {
-  title: "Modern Modular Kitchen Design Ideas - Living Space Decor",
+  title: "Modern Modular Kitchen Design Ideas | Living Space Decor",
 
   description:
-    "Explore modern modular kitchen design ideas, layouts, smart storage solutions, premium materials, finishes, and color combinations. Get inspiration for L-shaped, U-shaped, parallel, straight, and island kitchens.",
- alternates: {
+    "Explore modern modular kitchen design ideas by Living Space Decor. Discover L-shaped, U-shaped, parallel, straight, and island kitchen layouts with smart storage solutions, premium materials, finishes, and color combinations.",
+
+  keywords: [
+    "Modular Kitchen Design",
+    "Modern Kitchen Design",
+    "Kitchen Design Ideas",
+    "L Shaped Kitchen",
+    "U Shaped Kitchen",
+    "Parallel Kitchen",
+    "Island Kitchen",
+    "Straight Kitchen",
+    "Kitchen Interior Design",
+    "Modular Kitchen in  Greater Noida",
+    "Living Space Decor",
+  ],
+
+  alternates: {
     canonical: "/kitchen-design",
   },
-}
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function KitchenPage() {
   return (
@@ -29,7 +49,7 @@ export default function KitchenPage() {
       <MaterialsFinishes />
       <AccessoriesStorage />
       <RecentProjects />
-       <KitchenBudgetCalculator />
+      <KitchenBudgetCalculator />
       <KitchenCTA />
       <FAQSection />
     </>

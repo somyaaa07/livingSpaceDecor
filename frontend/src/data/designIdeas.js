@@ -15,19 +15,30 @@ export const designIdeas = [
     galleryDescription:
       "Every great space begins with a vision. We create personalized interiors that reflect your style, personality, and lifestyle.",
     moodboard: [
-      "/image/living_room2.webp",
-      // "/image/living_room3.webp",
-      // "/image/living_room4.webp",
-      "/image/living_room5.webp",
-      // "/image/living_room6.webp",
-
-      "/image/living_room9.webp",
-      // "/image/living_room10.webp",
-      // "/image/living_room11.webp",
-      // "/image/living_room12.webp",
-      // "/image/living_room13.webp",
-
-      "/image/living_room15.webp",
+      {
+        src: "/image/living_room2.webp",
+        title: "Modern Living Room Interior Design",
+        description:
+          "Clean lines and a neutral color palette create a serene and inviting atmosphere, perfect for contemporary living room interiors.",
+      },
+      {
+        src: "/image/living_room5.webp",
+        title: "Luxury Living Room Decor Ideas",
+        description:
+          "Elegant furniture pairings and layered textures bring warmth and sophistication to this modern living room design.",
+      },
+      {
+        src: "/image/living_room9.webp",
+        title: "Contemporary Living Room Furniture Layout",
+        description:
+          "A well-balanced furniture arrangement maximizes comfort and flow, ideal for family living and entertaining guests.",
+      },
+      {
+        src: "/image/living_room15.webp",
+        title: "Minimalist Living Room Design Inspiration",
+        description:
+          "Soft lighting and understated decor highlight a minimalist living room design that feels open, airy, and refined.",
+      },
     ],
     faq: [
       {
@@ -76,18 +87,54 @@ export const designIdeas = [
       "Our kids room interior designers create safe, functional, and personalized spaces that encourage learning, creativity, and everyday comfort.",
 
     moodboard: [
-      "/image/kids.webp",
-      "/image/kidss.webp",
-      "/image/kids_room_design.webp",
-      "/image/kids_room_design3.webp",
-      // "/image/kids_room_interior_design.webp",
-      "/image/kids_room_interior.webp",
-
-      "/image/kids_room2.webp",
-      // "/image/kids_room3.webp",
-
-      "/image/kids_room6.webp",
-      "/image/kids_room7.webp",
+      {
+        src: "/image/kids.webp",
+        title: "Playful Kids Room Design Theme",
+        description:
+          "A vibrant, theme-based kids bedroom design that sparks imagination while keeping the space functional for daily use.",
+      },
+      {
+        src: "/image/kidss.webp",
+        title: "Modern Children's Bedroom Design",
+        description:
+          "Bright colors and child-friendly furniture combine to create a modern, comfortable, and safe children's bedroom.",
+      },
+      {
+        src: "/image/kids_room_design.webp",
+        title: "Kids Study And Play Room Design",
+        description:
+          "A smartly zoned kids room design that balances a dedicated study corner with an open play area.",
+      },
+      {
+        src: "/image/kids_room_design3.webp",
+        title: "Kids Bedroom Storage Solutions",
+        description:
+          "Custom wardrobes and toy storage keep this kids bedroom design organized, clutter-free, and easy to maintain.",
+      },
+      {
+        src: "/image/kids_room_interior.webp",
+        title: "Creative Kids Room Interior Design",
+        description:
+          "Soft furnishings and playful accents make this kids room interior design both cozy and inspiring for young minds.",
+      },
+      {
+        src: "/image/kids_room2.webp",
+        title: "Kids Bedroom Furniture Ideas",
+        description:
+          "Rounded-edge, child-safe furniture creates a secure and stylish foundation for this kids bedroom design.",
+      },
+      {
+        src: "/image/kids_room6.webp",
+        title: "Themed Kids Room Interior",
+        description:
+          "A cheerful, personalized kids room interior design that grows with your child's evolving interests.",
+      },
+      {
+        src: "/image/kids_room7.webp",
+        title: "Functional Kids Bedroom Layout",
+        description:
+          "An efficient kids bedroom layout with smart zoning for sleep, study, and play in a compact footprint.",
+      },
     ],
 
     faq: [
@@ -180,14 +227,30 @@ export const designIdeas = [
     },
     ctaVideo: "/mandir.mp4",
     moodboard: [
-      "/image_old/mandir_design1.webp",
-      "/image_old/mandir_design2.webp",
-
-      "/image/mandir_design4.webp",
-      "/image/mandir_design5.webp",
-      "/image/mandir_design7.webp",
-      "/image/mandir_design3.webp",
-      "/image/mandir_design.webp",
+      {
+        src: "/image/mandir_design4.webp",
+        title: "Modern Wooden Mandir Design",
+        description:
+          "A warm wooden mandir design with intricate carvings that brings traditional charm to a contemporary pooja room.",
+      },
+      {
+        src: "/image/mandir_design5.webp",
+        title: "Elegant Pooja Room Interior Design",
+        description:
+          "Backlit marble panels and soft ambient lighting create a serene, elegant pooja room interior for daily worship.",
+      },
+      {
+        src: "/image/mandir_design7.webp",
+        title: "Compact Mandir Design For Apartments",
+        description:
+          "A space-saving mandir unit designed for apartments, combining functionality with a peaceful spiritual aesthetic.",
+      },
+      {
+        src: "/image/mandir_design6.webp",
+        title: "Contemporary Home Temple Design",
+        description:
+          "CNC-cut panels and minimalist detailing define this contemporary home temple design, ideal for modern interiors.",
+      },
     ],
   },
   {
@@ -243,10 +306,30 @@ export const designIdeas = [
       },
     ],
     moodboard: [
-      "/image/bedroom_design3.webp",
-      "/image/bedroom_design6.webp",
-      "/image/bedroom_design12.webp",
-      "/image/bedroom_design.jpeg",
+      {
+        src: "/image/bedroom_design3.webp",
+        title: "Modern Master Bedroom Design",
+        description:
+          "A luxurious master bedroom design featuring plush textures, ambient lighting, and a calming neutral palette.",
+      },
+      {
+        src: "/image/bedroom_design6.webp",
+        title: "Custom Wardrobe Bedroom Interior",
+        description:
+          "Sleek custom wardrobes and smart storage define this functional yet elegant bedroom interior design.",
+      },
+      {
+        src: "/image/bedroom_design12.webp",
+        title: "Minimalist Bedroom Design Ideas",
+        description:
+          "Clean lines and soft earthy tones bring a relaxing, minimalist feel to this modern bedroom interior.",
+      },
+      {
+        src: "/image/bedroom_design.jpeg",
+        title: "Luxury Bedroom Interior Inspiration",
+        description:
+          "Layered lighting and premium furnishings come together for a truly restful luxury bedroom design.",
+      },
     ],
 
     seo: {
@@ -266,17 +349,54 @@ export const designIdeas = [
     subtitle: "Modern Elegance In Every Detail",
     heroImage: "/Design/bathroom_banner.avif",
     moodboard: [
-      "/image/bathroom5.webp",
-      // "/image/bathroom6.webp",
-      // "/image/bathroom7.webp",
-
-      "/image/bathroom9.webp",
-      "/image/bathroom10.webp",
-      "/image/bathroom11.webp",
-      "/image/bathroom12.webp",
-      "/image/bathroom13.webp",
-      "/image/bathroom14.webp",
-      "/image/bathroom15.webp",
+      {
+        src: "/image/bathroom5.webp",
+        title: "Modern Bathroom Interior Design",
+        description:
+          "A sleek modern bathroom design with a floating vanity, matte finishes, and premium fittings for a spa-like feel.",
+      },
+      {
+        src: "/image/bathroom9.webp",
+        title: "Luxury Bathroom Vanity Design",
+        description:
+          "Elegant vanity and storage solutions combine to create a functional yet luxurious bathroom interior.",
+      },
+      {
+        src: "/image/bathroom10.webp",
+        title: "Walk-In Shower Bathroom Design",
+        description:
+          "A spacious walk-in shower with glass partitions defines this contemporary bathroom interior design.",
+      },
+      {
+        src: "/image/bathroom11.webp",
+        title: "Compact Bathroom Design Ideas",
+        description:
+          "Smart storage and light tones maximize space in this compact yet stylish bathroom interior.",
+      },
+      {
+        src: "/image/bathroom12.webp",
+        title: "Contemporary Bathroom Interior",
+        description:
+          "Quartz countertops and anti-skid flooring bring durability and elegance to this contemporary bathroom design.",
+      },
+      {
+        src: "/image/bathroom13.webp",
+        title: "Elegant Bathroom Finishes",
+        description:
+          "Premium tiles and refined fixtures create an elegant, moisture-resistant bathroom interior design.",
+      },
+      {
+        src: "/image/bathroom14.webp",
+        title: "Spacious Bathroom Layout Design",
+        description:
+          "A well-planned bathroom layout that balances comfort, storage, and stylish contemporary finishes.",
+      },
+      {
+        src: "/image/bathroom15.webp",
+        title: "Modern Vanity And Storage Design",
+        description:
+          "Custom vanity units and mirrored storage give this bathroom design a spacious, organized feel.",
+      },
     ],
     leftImage: "/image/bathroom3.webp",
     rightImage: "/image/bathroom8.webp",
@@ -344,16 +464,54 @@ export const designIdeas = [
     rightImage: "/image/office_design8.webp",
 
     moodboard: [
-      "/image/office_design.webp",
-      "/image/office_design1.webp",
-
-      "/image/office_design4.webp",
-      "/image/office_interior1.webp",
-      "/image/office_design7.webp",
-      "/image/office_design5.webp",
-
-      "/image/office_design10.webp",
-      "/image/office_design11.webp",
+      {
+        src: "/image/office_design.webp",
+        title: "Modern Home Office Design",
+        description:
+          "An ergonomic modern home office design with clean lines and ample natural light for enhanced productivity.",
+      },
+      {
+        src: "/image/office_design1.webp",
+        title: "Compact Home Office Layout",
+        description:
+          "A space-efficient home office layout with smart storage, ideal for small rooms and apartments.",
+      },
+      {
+        src: "/image/office_design4.webp",
+        title: "Home Office Storage Solutions",
+        description:
+          "Custom shelving and cabinets keep this home office interior organized, clutter-free, and efficient.",
+      },
+      {
+        src: "/image/office_interior1.webp",
+        title: "Contemporary Workspace Interior Design",
+        description:
+          "A contemporary workspace design combining ergonomic furniture with a calm, focus-friendly color palette.",
+      },
+      {
+        src: "/image/office_design7.webp",
+        title: "Home Office Furniture Ideas",
+        description:
+          "Sleek desks and ergonomic seating define this functional home office furniture arrangement.",
+      },
+      {
+        src: "/image/office_design5.webp",
+        title: "Productive Home Workspace Design",
+        description:
+          "Layered task and ambient lighting create a comfortable, productive home workspace design.",
+      },
+      {
+        src: "/image/office_design10.webp",
+        title: "Multi-User Home Office Design",
+        description:
+          "A shared home office design with separate workstations for multiple users in an organized layout.",
+      },
+      {
+        src: "/image/office_design11.webp",
+        title: "Home Office Design For Remote Work",
+        description:
+          "A focus-driven home office setup with efficient layouts tailored for remote work and daily meetings.",
+      },
     ],
     description:
       "Create a functional and inspiring home office with ergonomic furniture, smart storage, and modern workspace design solutions.",
@@ -411,10 +569,30 @@ export const designIdeas = [
     subtitle: "Outdoor Spaces Designed To Inspire",
     heroImage: "/image/balcony_design1.webp",
     moodboard: [
-      "/image/balcony_design.webp",
-      "/image/balcony_design1.webp",
-      "/image/balcony_interior_design2.webp",
-      "/Design/balcony3.avif",
+      {
+        src: "/image/balcony_design.webp",
+        title: "Modern Balcony Design Ideas",
+        description:
+          "Compact seating and vertical greenery transform this modern balcony design into a relaxing outdoor retreat.",
+      },
+      {
+        src: "/image/balcony_design1.webp",
+        title: "Cozy Terrace Interior Design",
+        description:
+          "Ambient string lighting and comfortable furniture make this terrace design perfect for evening gatherings.",
+      },
+      {
+        src: "/image/balcony_interior_design2.webp",
+        title: "Balcony Garden Design Inspiration",
+        description:
+          "Planters and low-maintenance greenery create a serene balcony garden design for outdoor living.",
+      },
+      {
+        src: "/Design/balcony3.avif",
+        title: "Rooftop Terrace Lounge Design",
+        description:
+          "Weather-resistant furniture and stylish decor turn this rooftop terrace into an inviting outdoor lounge.",
+      },
     ],
     leftImage: "/image/balcony_design.webp",
     rightImage: "/image/balcony_design1.webp",
@@ -491,10 +669,30 @@ export const designIdeas = [
       "Our dining room interior designers create elegant and functional spaces with stylish furniture, ambient lighting, and thoughtful layouts for memorable dining experiences.",
 
     moodboard: [
-      "/image/dining_room1.webp",
-      "/image/dining_room2.webp",
-      "/image/dining_room3.webp",
-      "/image/dining_room5.webp",
+      {
+        src: "/image/dining_room1.webp",
+        title: "Modern Dining Room Design",
+        description:
+          "A modern dining room design featuring a statement table and pendant lighting for an inviting family gathering space.",
+      },
+      {
+        src: "/image/dining_room2.webp",
+        title: "Luxury Dining Room Interior",
+        description:
+          "Elegant furniture and layered lighting bring a luxurious touch to this contemporary dining room interior.",
+      },
+      {
+        src: "/image/dining_room3.webp",
+        title: "Contemporary Dining Room Furniture",
+        description:
+          "Sleek dining furniture and a warm color palette define this contemporary dining room design.",
+      },
+      {
+        src: "/image/dining_room5.webp",
+        title: "Compact Dining Room Layout",
+        description:
+          "A space-efficient dining room layout with multifunctional furniture, perfect for small apartments.",
+      },
     ],
 
     faq: [
@@ -518,11 +716,6 @@ export const designIdeas = [
         answer:
           "Yes, we create space-efficient dining room layouts with smart furniture solutions, compact dining sets, and multifunctional designs.",
       },
-      // {
-      //   question: "Do you provide custom dining furniture designs?",
-      //   answer:
-      //     "Absolutely. We design custom dining tables, chairs, storage units, crockery cabinets, and display shelves tailored to your space and style.",
-      // },
     ],
 
     seo: {
@@ -562,14 +755,54 @@ export const designIdeas = [
       "A well-designed kitchen is the heart of every home. Our kitchen interiors focus on efficient layouts, premium finishes, smart storage solutions, and ergonomic designs that make cooking, dining, and entertaining more enjoyable.",
 
     moodboard: [
-      "/image/kitchen_design2.webp",
-      "/image/kitchen_design13.webp",
-      "/image/kitchen_design3.webp",
-      "/image/kitchen_design4.webp",
-      "/image/kitchen_design5.webp",
-      "/image/kitchen_design6.webp",
-      "/image/kitchen_design11.webp",
-      "/image/kitchen_design15.webp",
+      {
+        src: "/image/kitchen_design2.webp",
+        title: "Modular Kitchen Design Ideas",
+        description:
+          "A modern modular kitchen design with efficient storage and premium finishes for everyday functionality.",
+      },
+      {
+        src: "/image/kitchen_design13.webp",
+        title: "L-Shaped Kitchen Interior Design",
+        description:
+          "An L-shaped kitchen layout that maximizes workflow and storage in a compact, stylish footprint.",
+      },
+      {
+        src: "/image/kitchen_design3.webp",
+        title: "Modern Kitchen Cabinet Design",
+        description:
+          "Sleek acrylic and laminate cabinets define this modern kitchen design, blending style with durability.",
+      },
+      {
+        src: "/image/kitchen_design4.webp",
+        title: "Island Kitchen Design Inspiration",
+        description:
+          "A spacious island kitchen design that supports cooking, dining, and entertaining in one connected space.",
+      },
+      {
+        src: "/image/kitchen_design5.webp",
+        title: "Kitchen Storage Solutions Design",
+        description:
+          "Pull-out drawers and tall pantry units maximize storage in this well-organized modular kitchen.",
+      },
+      {
+        src: "/image/kitchen_design6.webp",
+        title: "Contemporary Kitchen Interior Design",
+        description:
+          "PU-coated panels and premium countertops bring a contemporary, elegant finish to this kitchen interior.",
+      },
+      {
+        src: "/image/kitchen_design11.webp",
+        title: "Parallel Kitchen Layout Design",
+        description:
+          "A parallel kitchen layout offering efficient workflow and ample counter space for modern homes.",
+      },
+      {
+        src: "/image/kitchen_design15.webp",
+        title: "Luxury Modular Kitchen Design",
+        description:
+          "Premium finishes and smart organizers come together in this luxury modular kitchen design.",
+      },
     ],
 
     faq: [

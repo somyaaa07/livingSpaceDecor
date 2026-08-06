@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────────
-// Point this at your PHP backend URL (e.g. "https://yourdomain.com/api/send-consultation.php")
-const API_ENDPOINT = "https://livingspacedecor.in/send-consultation.php";
+// Node/Express backend endpoint
+const API_ENDPOINT = "https://livingspacedecor.in/api/send-quote";
 // ───────────────────────────────────────────────────────────────────────────────
 
 const INITIAL_FORM = {
+  formType: "Modal Form",
   name: "",
   phone: "",
   city: "",
@@ -48,9 +49,9 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
       const data = await res.json();
 
-      if (!res.ok || data.status !== "success") {
+      if (!res.ok || !data.success) {
         throw new Error(
-          data.message || "Something went wrong. Please try again.",
+          data.error || "Something went wrong. Please try again.",
         );
       }
 

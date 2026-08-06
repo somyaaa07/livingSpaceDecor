@@ -7,14 +7,32 @@ import FAQSection from "@/components/service/furnitures/FAQSection";
 import MaterialTypes from "@/components/service/furnitures/MaterialTypes";
 
 export const metadata = {
-  title: " Furniture Designer - Living Space Decor ",
+  title: "Custom Furniture Design Services | Living Space Decor",
 
   description:
-    "Discover premium custom furniture solutions for homes and offices. Explore sofas, beds, wardrobes, dining tables,, storage furniture, and furniture materials crafted for style, comfort, and durability.",
-alternates: {
+    "Discover premium custom furniture design services by Living Space Decor. Explore stylish sofas, beds, wardrobes, TV units, dining tables, office furniture, storage solutions, and premium furniture materials designed for comfort, durability, and modern living.",
+
+  keywords: [
+    "Custom Furniture",
+    "Furniture Design",
+    "Furniture Designer",
+    "Home Furniture",
+    "Office Furniture",
+    "Wardrobe Design",
+    "Dining Table Design",
+    "Furniture in Noida",
+    "Living Space Decor",
+  ],
+
+  alternates: {
     canonical: "/furnitures",
   },
-}
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 
 export default function InteriorPage() {

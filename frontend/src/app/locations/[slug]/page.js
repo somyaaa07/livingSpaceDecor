@@ -1,45 +1,78 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { locations } from "@/data/locations";
+import { getLocation, getLocations } from "@/lib/serverApi";
 
+const API =
+  process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") ||
+  "http://localhost:5000";
+
+// Generate Static Params
 export async function generateStaticParams() {
-  return locations.map((location) => ({
+  const res = await getLocations();
+
+  return res.data.map((location) => ({
     slug: location.slug,
   }));
 }
 
+// SEO Metadata
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const location = locations.find((item) => item.slug === slug);
+  try {
+    const { data: location } = await getLocation(slug);
 
-  if (!location) {
     return {
-      title: "Location Not Found",
+      title: `${location.title} | Living Space Decor`,
+      description: location.description,
+
+      keywords: [
+        `${location.city} Interior Designer`,
+        `${location.city} Home Interior`,
+        location.service,
+        "Living Space Decor",
+        "Interior Design",
+      ],
+
+      alternates: {
+        canonical: `https://livingspacedecor.in/locations/${slug}`,
+      },
+
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  } catch {
+    return {
+      title: "Location Not Found | Living Space Decor",
+      description: "The requested location could not be found.",
     };
   }
-
-  return {
-    title: `${location.title} | Living Space Decor`,
-    description: location.description,
-  };
 }
 
 export default async function LocationPage({ params }) {
   const { slug } = await params;
 
-  const location = locations.find((item) => item.slug === slug);
+  let location;
 
-  if (!location) {
+  try {
+    const res = await getLocation(slug);
+    location = res.data;
+  } catch {
     notFound();
   }
 
   return (
     <main>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative h-[500px]">
         <Image
-          src={location.image}
+          src={
+            location.heroImage
+              ? `${API}${location.heroImage}`
+              : "/placeholder.jpg"
+          }
           alt={location.title}
           fill
           priority
@@ -52,9 +85,7 @@ export default async function LocationPage({ params }) {
               {location.title}
             </h1>
 
-            <p className="mt-5 max-w-2xl mx-auto text-md md:text-md">
-              {location.description}
-            </p>
+            <p className="mt-5 max-w-2xl mx-auto">{location.description}</p>
           </div>
         </div>
       </section>
@@ -62,7 +93,6 @@ export default async function LocationPage({ params }) {
       {/* About */}
       <section className="max-w-7xl mx-auto py-20 px-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Section */}
           <div>
             <h2 className="text-4xl font-bold text-[#3D1F0D]">
               Our {location.service}
@@ -75,10 +105,13 @@ export default async function LocationPage({ params }) {
             </p>
           </div>
 
-          {/* Right Section */}
           <div className="relative h-[450px] rounded-xl overflow-hidden">
             <Image
-              src={location.aboutImage}
+              src={
+                location.aboutImage
+                  ? `${API}${location.aboutImage}`
+                  : "/placeholder.jpg"
+              }
               alt={location.service}
               fill
               className="object-cover"
@@ -91,12 +124,11 @@ export default async function LocationPage({ params }) {
       <section className="bg-[#F5EBE0] py-20 mt-16">
         <div className="max-w-4xl mx-auto text-center px-5">
           <h2 className="text-4xl font-bold">
-            Looking for Interior Designers in Noida
+            Looking for Interior Designers in {location.city}
           </h2>
 
           <p className="mt-5 text-gray-600">
-            Call Now today and transform your dream home with
-            Living Space Decor.
+            Call today and transform your dream home with Living Space Decor.
           </p>
 
           <a

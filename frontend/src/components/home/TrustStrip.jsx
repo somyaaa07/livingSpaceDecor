@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    num: "500+",
-    title: "Projects Delivered",
-    desc: "Luxury homes & premium interiors completed across Noida and Delhi NCR.",
+    num: "99+", 
+    title: "Successful Projects Delivered in Noida",
+    desc: "Luxury homes & premium interiors completed across Noida and Greater Noida.",
   },
   {
-    num: "10 Yr",
+    num: "12 Yr",
     title: "Warranty Support",
     desc: "Long-term warranty coverage for modular kitchens and interiors.",
   },
@@ -19,7 +19,7 @@ const stats = [
     desc: "Timely project execution with premium finishing and quality assurance.",
   },
   {
-    num: "100%",
+    num: "99.9%",
     title: "Client Satisfaction",
     desc: "Trusted by homeowners for elegant and functional luxury interiors.",
   },
