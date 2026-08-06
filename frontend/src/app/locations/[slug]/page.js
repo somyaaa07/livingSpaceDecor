@@ -67,7 +67,7 @@ export default async function LocationPage({ params }) {
     <main>
       {/* Hero */}
       <section className="relative h-[500px]">
-        <Image
+        {/* <Image
           src={
             location.heroImage
               ? `${API}${location.heroImage}`
@@ -77,6 +77,16 @@ export default async function LocationPage({ params }) {
           fill
           priority
           className="object-cover"
+        /> */}
+
+        <img
+          src={
+            location.heroImage
+              ? `${API}${location.heroImage}`
+              : "/placeholder.jpg"
+          }
+          alt={location.title}
+          className="w-full h-full object-cover"
         />
 
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -106,7 +116,7 @@ export default async function LocationPage({ params }) {
           </div>
 
           <div className="relative h-[450px] rounded-xl overflow-hidden">
-            <Image
+            {/* <Image
               src={
                 location.aboutImage
                   ? `${API}${location.aboutImage}`
@@ -115,6 +125,15 @@ export default async function LocationPage({ params }) {
               alt={location.service}
               fill
               className="object-cover"
+            /> */}
+            <img
+              src={
+                location.aboutImage
+                  ? `${API}${location.aboutImage}`
+                  : "/placeholder.jpg"
+              }
+              alt={location.service}
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
