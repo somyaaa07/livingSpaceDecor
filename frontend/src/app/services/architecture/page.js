@@ -5,12 +5,28 @@ import CTA from "@/components/service/architecture/CTA";
 import FAQ from "@/components/service/architecture/FAQ";
 
 export const metadata = {
-  title: "Architecture Design Services - Living Space Decor",
+  title: "Architecture Design Services | Living Space Decor",
 
   description:
-    "Professional architecture design services for residential and commercial projects. We provide architectural planning, space optimization, 3D visualization, elevation design, and construction-ready drawings.",
+    "Living Space Decor offers professional architecture design services for residential and commercial projects. From architectural planning and space optimization to 3D visualization, elevation design, and construction-ready drawings, we help bring your vision to life.",
+
+  keywords: [
+    "Architecture Design",
+    "Architectural Services",
+    "Residential Architecture",
+    "Commercial Architecture",
+    "House Planning",
+    "Architect in Noida",
+    "Living Space Decor",
+  ],
+
   alternates: {
     canonical: "/architecture",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

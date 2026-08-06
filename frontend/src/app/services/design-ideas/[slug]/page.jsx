@@ -13,6 +13,47 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const design = designIdeas.find((item) => item.slug === slug);
+
+  if (!design) {
+    return {
+      title: "Design Ideas | Living Space Decor",
+      description:
+        "Explore premium interior design ideas by Living Space Decor.",
+
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: `${design.title} | Living Space Decor`,
+    description: design.description,
+
+    keywords: [
+      design.title,
+      "Interior Design",
+      "Home Interior",
+      "Living Space Decor",
+      "Interior Design Ideas",
+    ],
+
+    alternates: {
+      canonical: `https://livingspacedecor.in/services/design-ideas/${slug}`,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
 export default async function Page({ params }) {
   const { slug } = await params;
 

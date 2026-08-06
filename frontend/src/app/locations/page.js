@@ -1,119 +1,140 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search } from "lucide-react";
-import { locations } from "@/data/locations";
+import { getLocations } from "@/lib/serverApi";
+
+const API =
+  process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") ||
+  "http://localhost:5000";
 
 export default function LocationsPage() {
   const [search, setSearch] = useState("");
+  const [locations, setLocations] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredLocations = locations.filter(
-    (location) =>
-      location.title.toLowerCase().includes(search.toLowerCase()) ||
-      location.city.toLowerCase().includes(search.toLowerCase()) ||
-      location.service.toLowerCase().includes(search.toLowerCase())
+  useEffect(() => {
+    async function loadLocations() {
+      try {
+        const res = await getLocations();
+        setLocations(res.data || []);
+      } catch (error) {
+        console.error("Failed to load locations:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadLocations();
+  }, []);
+
+  const filteredLocations = locations.filter((location) =>
+    [location.title, location.city, location.service]
+      .join(" ")
+      .toLowerCase()
+      .includes(search.toLowerCase()),
   );
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="py-16 sm:py-20 bg-[#F5EBE0] text-center px-4">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-[#3D1F0D] leading-tight max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-[#3D1F0D]">
           Interior Design Services by Location
         </h1>
 
-        <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
+        <p className="mt-4 text-gray-600">
           Choose your location to explore our interior design services.
         </p>
 
-        {/* Search Bar */}
-        <div className="mt-8 max-w-xl mx-auto px-4 sm:px-0">
-          <div className="relative flex items-center">
+        <div className="mt-8 max-w-xl mx-auto">
+          <div className="relative">
             <Search
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-[#3D1F0D] opacity-60 pointer-events-none"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
               size={20}
             />
+
             <input
               type="text"
               placeholder="Search by location or service..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-5 py-4 rounded-full border border-[#d6c4b0] bg-white focus:outline-none focus:ring-2 focus:ring-[#3D1F0D] focus:border-transparent shadow-md placeholder-gray-400 text-gray-700 text-sm sm:text-base transition"
+              className="w-full pl-12 pr-10 py-4 rounded-full border"
             />
+
             {search && (
               <button
+                className="absolute right-4 top-1/2 -translate-y-1/2"
                 onClick={() => setSearch("")}
-                aria-label="Clear search"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#3D1F0D] transition text-lg leading-none"
               >
                 ✕
               </button>
             )}
           </div>
-
-          {search && (
-            <p className="mt-3 text-sm text-gray-500 text-left pl-4">
-              {filteredLocations.length === 0
-                ? "No results found"
-                : `${filteredLocations.length} location${filteredLocations.length !== 1 ? "s" : ""} found`}
-            </p>
-          )}
         </div>
       </section>
 
-      {/* Location Cards */}
-      <section className="max-w-7xl mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        {filteredLocations.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
+      {/* Cards */}
+      <section className="max-w-7xl mx-auto py-16 px-4">
+        {loading ? (
+          <div className="text-center text-lg">Loading...</div>
+        ) : filteredLocations.length === 0 ? (
+          <div className="text-center">
+            <h3 className="text-2xl font-semibold">No Locations Found</h3>
+
+            <p className="text-gray-500 mt-2">Try another keyword.</p>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredLocations.map((location) => (
               <Link
-                key={location.slug}
+                key={location.id}
                 href={`/locations/${location.slug}`}
-                className="group rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 bg-white border border-gray-100"
+                className="rounded-xl overflow-hidden shadow hover:shadow-xl transition"
               >
-                <div className="relative w-full h-52 sm:h-60 overflow-hidden">
+                {/* <div className="relative h-60">
                   <Image
-                    src={location.image}
+                    src={
+                      location.heroImage
+                        ? `${API}${location.heroImage}`
+                        : "/placeholder.jpg"
+                    }
                     alt={location.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition duration-500"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover"
+                  />
+                </div> */}
+                <div className="h-60 w-full">
+                  <img
+                    src={
+                      location.heroImage
+                        ? `${API}${location.heroImage}`
+                        : "/placeholder.jpg"
+                    }
+                    alt={location.title}
+                    className="w-full h-full object-cover"
+                    onLoad={() => console.log("Loaded:", location.heroImage)}
+                    onError={(e) => console.log("Failed:", e.currentTarget.src)}
                   />
                 </div>
 
-                <div className="p-5 sm:p-6">
-                  <h2 className="text-base sm:text-lg font-heading font-semibold text-[#3D1F0D] leading-snug">
+                <div className="p-5">
+                  <h2 className="text-lg font-semibold text-[#3D1F0D]">
                     {location.title}
                   </h2>
 
-                  <p className="mt-2 sm:mt-3 text-gray-500 text-sm line-clamp-3">
+                  <p className="text-sm text-gray-500 mt-2 line-clamp-3">
                     {location.description}
                   </p>
 
-                  <span className="mt-4 inline-block text-xs font-semibold text-[#3D1F0D] uppercase tracking-wider border-b border-[#3D1F0D] pb-0.5 group-hover:opacity-70 transition">
+                  <span className="inline-block mt-4 text-[#3D1F0D] font-semibold">
                     Explore →
                   </span>
                 </div>
               </Link>
             ))}
-          </div>
-        ) : (
-          <div className="text-center py-20 sm:py-28">
-            <div className="text-5xl mb-4">🔍</div>
-            <p className="text-gray-500 text-lg font-medium">
-              No locations found for &ldquo;{search}&rdquo;
-            </p>
-            <p className="text-gray-400 text-sm mt-2">
-              Try a different city, service, or keyword.
-            </p>
-            <button
-              onClick={() => setSearch("")}
-              className="mt-6 px-6 py-2.5 rounded-full bg-[#3D1F0D] text-white text-sm font-medium hover:bg-[#5a2e14] transition"
-            >
-              Clear search
-            </button>
           </div>
         )}
       </section>

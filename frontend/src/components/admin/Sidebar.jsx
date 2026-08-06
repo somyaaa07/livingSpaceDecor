@@ -10,6 +10,7 @@ import {
   Newspaper,
   Settings,
   LogOut,
+  MapPin,
   Menu,
   X,
 } from "lucide-react";
@@ -18,6 +19,11 @@ const NAV = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/projects", label: "Portfolio Projects", icon: LayoutGrid },
   { href: "/admin/blogs", label: "Blog Posts", icon: Newspaper },
+  {
+   label: "Locations",
+    href: "/admin/locations",
+    icon: MapPin,
+  },
   // { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 
@@ -69,7 +75,9 @@ export default function Sidebar() {
               <span className="w-[22px] h-px bg-[#C8972B] inline-block" />
               Interior Decor
             </p>
-            <h2 className="font-display text-2xl text-[#F5EBE0]">Admin Panel</h2>
+            <h2 className="font-display text-2xl text-[#F5EBE0]">
+              Admin Panel
+            </h2>
           </div>
           {/* Close button — sirf drawer mode me dikhega */}
           <button
