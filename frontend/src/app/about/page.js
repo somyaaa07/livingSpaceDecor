@@ -5,10 +5,10 @@ import AchievementStats from "@/components/about/AchievementStats";
 import OurStory from "@/components/about/OurStory";
 
 export const metadata = {
-  title: "About Us | Living Space Decor",
+  title: "About Living Space Decor | Interior Designers in Noida",
 
   description:
-    "Learn about Living Space Decor, a trusted interior designer company in Noida specializing in modular kitchens, wardrobes, luxury home interiors, and turnkey interior solutions.",
+    "Discover Living Space Decor, trusted interior designers in Noida specializing in modular kitchens, wardrobes, luxury home interiors, and turnkey solutions.",
 
   keywords: [
     "About Living Space Decor",

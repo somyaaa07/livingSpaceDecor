@@ -9,9 +9,8 @@ import MaterialTypes from "@/components/service/furnitures/MaterialTypes";
 export const metadata = {
   title: "Custom Furniture Design Services | Living Space Decor",
 
-  description:
-    "Discover premium custom furniture design services by Living Space Decor. Explore stylish sofas, beds, wardrobes, TV units, dining tables, office furniture, storage solutions, and premium furniture materials designed for comfort, durability, and modern living.",
-
+description:
+  "Discover custom furniture design services by Living Space Decor. Explore sofas, beds, wardrobes, dining tables, and storage solutions in Noida and Greater Noida.",
   keywords: [
     "Custom Furniture",
     "Furniture Design",

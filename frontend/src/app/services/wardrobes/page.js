@@ -13,9 +13,8 @@ import Details from "@/components/service/wardrobes/Details";
 export const metadata = {
   title: "Wardrobe Design Services | Living Space Decor",
 
-  description:
-    "Discover premium custom wardrobe design services by Living Space Decor. Explore sliding wardrobes, walk-in wardrobes, hinged wardrobes, modular wardrobes, smart storage solutions, premium finishes, and customized wardrobe interiors for modern homes.",
-
+description:
+  "Discover custom wardrobe design services by Living Space Decor. Explore sliding, walk-in, hinged, and modular wardrobes with smart storage solutions in Noida and Greater Noida.",
   keywords: [
     "Wardrobe Design",
     "Custom Wardrobe",

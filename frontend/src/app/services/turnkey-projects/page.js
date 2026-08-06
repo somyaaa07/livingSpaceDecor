@@ -10,8 +10,7 @@ export const metadata = {
   title: "Turnkey Interior Design Services | Living Space Decor",
 
   description:
-    "Living Space Decor offers complete turnkey interior design services for homes, apartments, villas, and offices. From design and planning to execution, furniture, false ceilings, electrical work, painting, and final handover, we manage every aspect of your interior project.",
-
+    "Living Space Decor provides turnkey interior design services for homes, apartments, villas, and offices in Noida, Greater Noida, & Gaziabad.",
   keywords: [
     "Turnkey Interior Design",
     "Turnkey Interior Services",

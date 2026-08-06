@@ -4,11 +4,10 @@ import GoogleMap from "@/components/contact/GoogleMap";
 import FAQSection from "@/components/contact/FAQSection";
 
 export const metadata = {
-  title: "Contact Us | Living Space Decor",
+  title: "Contact Us | Living Space Decor - Interior Designers in Noida",
 
   description:
-    "Contact Living Space Decor for professional interior design services in Noida, Greater Noida,and  Ghaziabad. Get a free consultation for modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
-
+    "Contact Living Space Decor for expert interior design services in Noida, Greater Noida, and Ghaziabad. Book a free consultation today.",
   keywords: [
     "Contact Living Space Decor",
     "Interior Designer Contact",

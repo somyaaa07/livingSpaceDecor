@@ -6,7 +6,7 @@ export const metadata = {
   title: "Interior Cost Calculator | Living Space Decor",
 
   description:
-    "Estimate your home interior design cost instantly with the Living Space Decor Interior Cost Calculator. Get approximate pricing for modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors in Noida, Greater Noida, Ghaziabad, and Delhi NCR.",
+    "Estimate your home interior design cost instantly with the Living Space Decor Interior Cost Calculator. Get approximate pricing for modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors in Noida, Greater Noida,& Ghaziabad.",
 
   keywords: [
     "Interior Cost Calculator",

@@ -13,8 +13,7 @@ export const metadata = {
   title: "Modern Modular Kitchen Design Ideas | Living Space Decor",
 
   description:
-    "Explore modern modular kitchen design ideas by Living Space Decor. Discover L-shaped, U-shaped, parallel, straight, and island kitchen layouts with smart storage solutions, premium materials, finishes, and color combinations.",
-
+    "Explore modern modular kitchen design ideas with L-shaped, U-shaped, island, parallel, and straight layouts by Living Space Decor in Noida & Greater Noida.",
   keywords: [
     "Modular Kitchen Design",
     "Modern Kitchen Design",

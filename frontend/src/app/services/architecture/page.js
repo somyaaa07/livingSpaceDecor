@@ -8,8 +8,7 @@ export const metadata = {
   title: "Architecture Design Services | Living Space Decor",
 
   description:
-    "Living Space Decor offers professional architecture design services for residential and commercial projects. From architectural planning and space optimization to 3D visualization, elevation design, and construction-ready drawings, we help bring your vision to life.",
-
+    "Living Space Decor offers professional architecture design services for homes and commercial spaces, including planning, elevations, and construction drawings in Noida and Greater Noida.",
   keywords: [
     "Architecture Design",
     "Architectural Services",

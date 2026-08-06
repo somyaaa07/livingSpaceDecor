@@ -18,19 +18,23 @@ export const metadata = {
   metadataBase: new URL("https://livingspacedecor.in"),
 
   title: {
-    default: "Living Space Decor",
+    default: "Living Space Decor | Interior Designers in Noida & Greater Noida",
     template: "%s",
   },
 
   description:
-    "Living Space Decor provides premium interior design services in Noida, Greater Noida, Ghaziabad, specializing in modular kitchens, wardrobes, home interiors, and turnkey interior solutions.",
+    "Living Space Decor offers premium interior design, modular kitchens, wardrobes, and turnkey home interiors in Noida, Greater Noida, Ghaziabad, and Delhi NCR.",
 
   keywords: [
-    "Interior Designer",
-    "Interior Design",
+    "Interior Designers in Noida",
+    "Interior Designers in Greater Noida",
+    "Home Interior Design",
     "Modular Kitchen",
     "Wardrobe Design",
-    "Home Interior",
+    "Turnkey Interior",
+    "Luxury Interior Design",
+    "Living Room Interior",
+    "Bedroom Interior",
     "Living Space Decor",
   ],
 
@@ -41,17 +45,33 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 
   openGraph: {
-    siteName: "Living Space Decor",
-    title: "Living Space Decor",
+    title: "Living Space Decor | Interior Designers in Noida & Greater Noida",
+
     description:
-      "Premium Interior Design Services in Greater Noida & Noida.",
+      "Premium interior design company offering modular kitchens, wardrobes, luxury home interiors, and turnkey solutions across Noida and Delhi NCR.",
+
     url: "https://livingspacedecor.in",
-    type: "website",
+
+    siteName: "Living Space Decor",
+
     locale: "en_IN",
+
+    type: "website",
+
+    
   },
+
+ 
 };
 
 export default function RootLayout({ children }) {
