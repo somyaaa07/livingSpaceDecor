@@ -46,7 +46,7 @@ export default function ArchitectureHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Design/architecture_banner.avif"
+          src="/Design/architecture_banner.jpg"
           alt="Luxury Architecture"
           fill
           priority
