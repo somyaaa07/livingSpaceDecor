@@ -116,7 +116,8 @@ export default function CTABanner() {
               </Link>
 
               <p className="text-[11px] sm:text-[12px] text-[#3D1F0D] text-center leading-[1.8]">
-                <span className="font-semibold">500+</span> luxury projects
+                {/* <span className="font-semibold">500+</span>  */}
+                luxury projects
                 delivered
                 <br />
                 across Noida, Greater Noida & Ghaziabad

@@ -14,7 +14,7 @@ const NAV_LINKS = [
 const MORE_LINK = [
   { label: "Architecture & Construction", href: "/services/architecture" },
   { label: "Furnitures", href: "/services/furnitures" },
-  { label: "Trunkey Projects", href: "/services/turnkey-projects" },
+  { label: "Turnkey Projects", href: "/services/turnkey-projects" },
 ];
 
 const SERVICE_LINKS = [
@@ -43,7 +43,7 @@ const DESIGN_IDEAS = [
     label: "Bathroom Design",
     href: "/services/design-ideas/bathroom-design",
   },
-  { label: "Bedroom Design", href: "/services/design-ideas/bathroom-design" },
+  { label: "Bedroom Design", href: "/services/design-ideas/bedroom-design" },
   {
     label: "Home Office Design",
     href: "/services/design-ideas/home-office-design",

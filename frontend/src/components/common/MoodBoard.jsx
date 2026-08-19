@@ -37,6 +37,7 @@ export default function DesignGallery({ data }) {
         src={src}
         alt={title || "Design"}
         fill
+        sizes="(max-width: 768px) 50vw, 25vw"
         priority={priority}
         className="object-cover transition-all duration-500 group-hover:scale-105"
       />

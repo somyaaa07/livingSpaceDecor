@@ -3,25 +3,25 @@ export const steps = [
     num: "01",
     title: "Consultation",
     desc: "Understanding your vision, lifestyle, and aspirations through in-depth discovery sessions.",
-    img: "https://images.pexels.com/photos/37178208/pexels-photo-37178208.jpeg",
+    img: "/Design/consultation.avif",
   },
   {
     num: "02",
     title: "Concept Design",
     desc: "Mood boards, material palettes, and spatial layouts crafted to tell your unique story.",
-    img: "https://images.pexels.com/photos/28456460/pexels-photo-28456460.jpeg",
+    img: "/Design/concept_design.avif",
   },
   {
     num: "03",
     title: "3D Visualization",
     desc: "Photorealistic renders so you see your space before a single nail is driven.",
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=75",
+    img: "/Design/visualization.jpg",
   },
   {
     num: "04",
     title: "Execution",
     desc: "Master craftsmen and curated vendors bring every detail to flawless life.",
-    img: "https://images.pexels.com/photos/35203644/pexels-photo-35203644.jpeg",
+    img: "/Design/execution.avif",
   },
 ];
 
