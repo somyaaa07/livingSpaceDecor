@@ -11,7 +11,7 @@ import "swiper/css/effect-coverflow";
 const processSteps = [
   {
     title: "Consultation",
-    image: "https://images.pexels.com/photos/8837733/pexels-photo-8837733.jpeg",
+    image: "/Design/tunkey_consultation.avif",
     description:
       "Discuss requirements, lifestyle, budget, and design vision with our experts.",
   },
@@ -23,7 +23,7 @@ const processSteps = [
   },
   {
     title: "3D Visualization",
-    image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
+    image: "/Design/tunkey_visualization.avif",
     description:
       "Photorealistic 3D renders to visualize your future home before execution.",
   },

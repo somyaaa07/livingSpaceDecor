@@ -16,7 +16,7 @@ const BRAND_STATS = [
     title: "A Decade of Spatial Mastery",
     description:
       "Living Space Decor operates as an uncompromising, full-service interior architectural firm, commanding transformations from blueprints to bespoke styling.",
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
+    img: "/Design/image1.avif",
   },
   {
     number: "12+",
@@ -24,7 +24,7 @@ const BRAND_STATS = [
     title: "Years of Living Innovation",
     description:
       "Ten years spent meticulously tailoring private residences, kitchens, and architectural suites, balancing strict geometry with soft livability.",
-    img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop",
+    img: "/Design/contact_banner.avif",
   },
   {
     number: "35+",
@@ -32,7 +32,7 @@ const BRAND_STATS = [
     title: "Master Craftsmen & Artisans",
     description:
       "An elite, highly collaborative ecosystem of interior architects, project leaders, and artisan furniture makers refining every surface.",
-    img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop",
+    img: "/Design/collective.avif",
   },
   {
     number: "18",

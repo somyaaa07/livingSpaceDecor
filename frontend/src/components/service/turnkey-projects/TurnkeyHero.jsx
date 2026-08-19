@@ -33,7 +33,7 @@ export default function TrunkeyHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.pexels.com/photos/6032398/pexels-photo-6032398.jpeg"
+          src="/Design/turnkey_banner.avif"
           alt="Turnkey Interior Project"
           fill
           priority

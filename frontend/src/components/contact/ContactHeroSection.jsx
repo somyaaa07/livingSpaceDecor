@@ -15,16 +15,13 @@ export default function ContactHeroSection() {
         overflow-hidden
       "
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1920&auto=format&fit=crop')",
+        backgroundImage: "url('/Design/contact_banner.avif')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-[#1F0E04]/70" />
-
-     
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-8 lg:px-14 text-center">

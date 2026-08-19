@@ -9,7 +9,7 @@ const projects = [
     title: "Luxury Villa",
     category: "Residential",
     image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600",
+      "/Design/luxury_villa.jpg",
     height: "h-[520px]",
   },
   {
