@@ -61,7 +61,7 @@ export default function CTA() {
                   <div className="grid grid-cols-3 gap-4 sm:gap-6">
                     <div>
                       <h3 className="text-[#C59A43] text-3xl sm:text-4xl font-light">
-                        500+
+                        20+
                       </h3>
 
                       <p className="uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs text-[#9A8D7E] mt-2">

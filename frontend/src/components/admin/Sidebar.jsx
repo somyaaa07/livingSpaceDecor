@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
 import {
+  CalendarDays,
   LayoutDashboard,
   LayoutGrid,
   Newspaper,
@@ -18,6 +19,11 @@ import {
 const NAV = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/projects", label: "Portfolio Projects", icon: LayoutGrid },
+  {
+    href: "/admin/upcoming-projects",
+    label: "Upcoming Projects",
+    icon: CalendarDays,
+  },
   { href: "/admin/blogs", label: "Blog Posts", icon: Newspaper },
   {
    label: "Locations",

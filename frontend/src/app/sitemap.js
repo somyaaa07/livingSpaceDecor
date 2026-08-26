@@ -4,9 +4,7 @@ import { getBlogs, getProjects, getLocations } from "@/lib/serverApi";
 const BASE_URL = "https://livingspacedecor.in";
 
 export default async function sitemap() {
-
   // Static Pages
- 
 
   const staticRoutes = [
     "",
@@ -16,9 +14,9 @@ export default async function sitemap() {
     "portfolio",
     "locations",
     "services",
-    "architecture",
-    "furnitures",
-    "turnkey-projects",
+    "services/architecture",
+    "services/furnitures",
+    "services/turnkey-projects",
     "wardrobes",
     "kitchen-design",
     "kitchen-calculator",
@@ -41,7 +39,7 @@ export default async function sitemap() {
     changeFrequency: "monthly",
     priority: 0.8,
   }));
- 
+
   // Locations (Database)
 
   let locationPages = [];
@@ -80,7 +78,6 @@ export default async function sitemap() {
   }
 
   // Portfolio (Database)
- 
 
   let portfolioPages = [];
 
@@ -99,7 +96,6 @@ export default async function sitemap() {
   } catch (error) {
     console.error("Portfolio Sitemap Error:", error);
   }
-
 
   // Return Sitemap
 

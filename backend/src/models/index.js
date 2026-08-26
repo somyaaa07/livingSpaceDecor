@@ -4,11 +4,13 @@ import Admin from "./Admin.js";
 import Blog from "./Blog.js";
 import BlackListed from './BlackListedToken.js'
 export { default as Location } from "./Location.js";
+import UpcomingProject from "./UpcomingProject.js";
 
 export {
     sequelize,
   Project,
   Admin,
   Blog,
-  BlackListed
+  BlackListed,
+  UpcomingProject,
 }

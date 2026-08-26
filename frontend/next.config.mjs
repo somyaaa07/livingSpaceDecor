@@ -13,10 +13,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "api.livingspacedecor.in",
       },
-      // {
-      //   protocol: "https",
-      //   hostname: "images.unsplash.com",
-      // },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
       {
         protocol: "https",
         hostname: "randomuser.me",

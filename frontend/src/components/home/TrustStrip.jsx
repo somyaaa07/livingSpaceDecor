@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    num: "20+", 
+    num: "200+", 
     title: "Successful Projects Delivered in Noida",
     desc: "Luxury homes & premium interiors completed across Noida and Greater Noida.",
   },

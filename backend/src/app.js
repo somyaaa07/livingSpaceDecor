@@ -13,6 +13,8 @@ import authRoutes from "./routes/auth.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
 import locationRoutes from "./routes/location.routes.js";
 import sendQuoteRoute from "./routes/sendQuote.js";
+import upcomingProjectRoutes from "./routes/upcomingProjectRoutes.js";
+
 
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 
@@ -60,6 +62,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/location", locationRoutes);
 app.use("/api", sendQuoteRoute);
+app.use("/api/upcoming-projects", upcomingProjectRoutes);
+
 
 app.use(notFound);
 app.use(errorHandler);
