@@ -1,5 +1,3 @@
-// models/UpcomingProject.js
-
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
@@ -15,6 +13,11 @@ const UpcomingProject = sequelize.define(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
 
     alt: {

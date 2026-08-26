@@ -122,9 +122,9 @@
 //     </section>
 //   );
 // }
-
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -137,18 +137,19 @@ export default function ProjectsSection() {
   useEffect(() => {
     const fetchUpcomingProjects = async () => {
       try {
-        const response = await fetch(`${API_URL}/upcoming-projects/latest`);
+        const response = await fetch(
+          `${API_URL}/upcoming-projects/latest`,
+          {
+            cache: "no-store",
+          }
+        );
 
         const data = await response.json();
 
         console.log("Upcoming Projects API Response:", data);
 
-        if (response.ok) {
-          const projectList = Array.isArray(data)
-            ? data
-            : data.projects || data.data || data.upcomingProjects || [];
-
-          setProjects(Array.isArray(projectList) ? projectList : []);
+        if (response.ok && data.success) {
+          setProjects(data.projects || []);
         } else {
           setProjects([]);
         }
@@ -162,6 +163,18 @@ export default function ProjectsSection() {
 
     fetchUpcomingProjects();
   }, []);
+
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) {
+      return "/image/placeholder.webp";
+    }
+
+    if (imagePath.startsWith("http")) {
+      return imagePath;
+    }
+
+    return `${BACKEND_URL}${imagePath}`;
+  };
 
   if (loading) {
     return (
@@ -200,27 +213,28 @@ export default function ProjectsSection() {
         {/* PROJECT CARDS */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {projects.slice(0, 4).map((project, index) => {
-            // CREATE CORRECT IMAGE URL
-            const imageUrl = project.image
-              ? project.image.startsWith("http")
-                ? project.image
-                : `${BACKEND_URL}${project.image}`
-              : "/image/placeholder.webp";
+            const projectId = project.id;
+
+            const imageUrl = getImageUrl(project.image);
 
             return (
-              <div
-                key={project.id || project._id || index}
-                className="relative h-[280px] sm:h-[420px] lg:h-[460px] w-full overflow-hidden bg-[#F0E6D8] group cursor-pointer"
+              <Link
+                key={projectId}
+                href={`/upcoming-project/${projectId}`}
+                className="relative block h-[280px] sm:h-[420px] lg:h-[460px] w-full overflow-hidden bg-[#F0E6D8] group cursor-pointer"
               >
                 {/* IMAGE */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <img
                     className="block h-full w-full object-cover grayscale-[15%] sepia-[5%] transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0 group-hover:sepia-0"
                     src={imageUrl}
-                    alt={project.title || "Upcoming interior project"}
+                    alt={
+                      project.alt ||
+                      project.title ||
+                      "Upcoming interior project"
+                    }
                     loading="lazy"
                     onError={(e) => {
-                      console.error("Image failed to load:", imageUrl);
                       e.currentTarget.src = "/image/placeholder.webp";
                     }}
                   />
@@ -240,14 +254,14 @@ export default function ProjectsSection() {
                 {/* CONTENT */}
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col gap-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-[9px] tracking-[0.2em] uppercase text-[#C8972B] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    Bespoke Concept
+                    Upcoming Project
                   </span>
 
                   <h3 className="font-marcellus text-lg sm:text-xl lg:text-2xl text-white tracking-wide leading-tight">
                     {project.title}
                   </h3>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

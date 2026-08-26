@@ -5,7 +5,7 @@ import { UpcomingProject } from "../models/index.js";
 ========================================================= */
 export const createUpcomingProject = async (req, res) => {
   try {
-    const { title, alt } = req.body;
+    const { title, description, alt } = req.body;
 
     if (!title) {
       return res.status(400).json({
@@ -22,6 +22,7 @@ export const createUpcomingProject = async (req, res) => {
 
     const project = await UpcomingProject.create({
       title,
+      description: description || null,
       alt: alt || title,
       image,
     });
@@ -130,7 +131,7 @@ export const getUpcomingProjectById = async (req, res) => {
 export const updateUpcomingProject = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, alt } = req.body;
+    const { title, description, alt } = req.body;
 
     const project = await UpcomingProject.findByPk(id);
 
@@ -143,6 +144,11 @@ export const updateUpcomingProject = async (req, res) => {
 
     const updateData = {
       title: title || project.title,
+
+      // Update description if it is sent from frontend
+      description:
+        description !== undefined ? description : project.description,
+
       alt: alt || project.alt,
     };
 
