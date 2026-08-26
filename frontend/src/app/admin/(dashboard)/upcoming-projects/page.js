@@ -11,8 +11,12 @@ import {
   FolderOpen,
 } from "lucide-react";
 
-const API_URL = "http://localhost:5000/api/upcoming-projects";
-const BACKEND_URL = "http://localhost:5000";
+// const API_URL = "http://localhost:5000/api/upcoming-projects";
+// const BACKEND_URL = "http://localhost:5000";
+
+const API_URL = "https://livingspacedecor.in/api/upcoming-projects";
+const BACKEND_URL = "https://livingspacedecor.in";
+
 
 export default function UpcomingProjectsPage() {
   const [projects, setProjects] = useState([]);
