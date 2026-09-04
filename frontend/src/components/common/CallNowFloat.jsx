@@ -1,37 +1,40 @@
 "use client";
 
-import { FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-export default function WhatsAppFloat() {
+export default function CallNowFloat() {
   const phoneNumber = "918826606869";
-
-  const message =
-    "Hi, I am interested in interior design services. Please share details about consultation, pricing, and project timelines.";
-
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message,
-  )}`;
 
   return (
     <motion.a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
+      href={`tel:+${phoneNumber}`}
+      aria-label="Call Now"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{
         duration: 0.5,
-        delay: 1,
+        delay: 1.2,
         type: "spring",
       }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-4 right-4 md:bottom-5 md:right-5 lg:bottom-8 lg:right-8 z-[999] group"
+      className="
+        fixed
+        bottom-[88px]
+        right-4
+        sm:bottom-[96px]
+        sm:right-5
+        md:bottom-[108px]
+        md:right-5
+        lg:bottom-[120px]
+        lg:right-8
+        z-[999]
+        group
+      "
     >
       {/* Ripple Animation */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
+      <span className="absolute inset-0 rounded-full bg-[#b11406] animate-ping opacity-20" />
 
       {/* Main Button */}
       <div
@@ -41,26 +44,26 @@ export default function WhatsAppFloat() {
           items-center
           justify-center
           w-14 h-14
-          sm:w-15 sm:h-15
-          md:w-18 md:h-18
+          sm:w-16 sm:h-16
+          md:w-[72px] md:h-[72px]
           lg:w-[72px] lg:h-[72px]
           rounded-full
-          bg-[#25D366]
+          bg-[#b11406]
           text-white
-          shadow-[0_15px_40px_rgba(37,211,102,0.45)]
+          shadow-[0_15px_40px_rgba(177,20,6,0.45)]
         "
       >
-        <FaWhatsapp
+        <FaPhoneAlt
           className="
-            w-8 h-8
-            sm:w-10 sm:h-10
-            md:w-10 md:h-10
-            lg:w-12 lg:h-12
+            w-6 h-6
+            sm:w-7 sm:h-7
+            md:w-8 md:h-8
+            lg:w-9 lg:h-9
           "
         />
       </div>
 
-      {/* Tooltip - Hidden on Mobile */}
+      {/* Tooltip */}
       <div
         className="
           hidden
@@ -71,7 +74,7 @@ export default function WhatsAppFloat() {
           top-1/2
           -translate-y-1/2
           whitespace-nowrap
-          bg-[#3D1F0D]
+          bg-[#C8972B]
           text-white
           text-xs
           lg:text-sm
@@ -86,7 +89,7 @@ export default function WhatsAppFloat() {
           shadow-xl
         "
       >
-        Chat With Us
+        Call Now
       </div>
     </motion.a>
   );

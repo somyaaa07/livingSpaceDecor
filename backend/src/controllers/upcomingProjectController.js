@@ -1,30 +1,85 @@
 import { UpcomingProject } from "../models/index.js";
 
 /* =========================================================
+   HELPER
+========================================================= */
+
+const getFilePath = (file) => {
+  if (!file) return null;
+
+  return `/uploads/${file.filename}`;
+};
+
+/* =========================================================
    CREATE UPCOMING PROJECT
+   Main Image + 4-6 Gallery Images
 ========================================================= */
 export const createUpcomingProject = async (req, res) => {
   try {
     const { title, description, alt } = req.body;
 
-    if (!title) {
+    // -----------------------------------------
+    // VALIDATE TITLE
+    // -----------------------------------------
+    if (!title || !title.trim()) {
       return res.status(400).json({
         success: false,
         message: "Project title is required",
       });
     }
 
-    let image = null;
+    // -----------------------------------------
+    // MAIN IMAGE
+    // -----------------------------------------
+    const mainImage =
+      req.files?.image?.length > 0 ? getFilePath(req.files.image[0]) : null;
 
-    if (req.file) {
-      image = `/uploads/${req.file.filename}`;
+    // Main image is required
+    if (!mainImage) {
+      return res.status(400).json({
+        success: false,
+        message: "Main project image is required",
+      });
     }
 
+    // -----------------------------------------
+    // GALLERY IMAGES
+    // -----------------------------------------
+    const galleryFiles = req.files?.gallery || [];
+
+    // Gallery must contain 4-6 images
+    if (galleryFiles.length < 4) {
+      return res.status(400).json({
+        success: false,
+        message: "Please upload at least 4 gallery images",
+      });
+    }
+
+    if (galleryFiles.length > 6) {
+      return res.status(400).json({
+        success: false,
+        message: "You can upload maximum 6 gallery images",
+      });
+    }
+
+    const gallery = galleryFiles.map((file) => getFilePath(file));
+
+    // -----------------------------------------
+    // CREATE PROJECT
+    // -----------------------------------------
     const project = await UpcomingProject.create({
-      title,
-      description: description || null,
-      alt: alt || title,
-      image,
+      title: title.trim(),
+
+      description:
+        description && description.trim() ? description.trim() : null,
+
+      alt: alt && alt.trim() ? alt.trim() : title.trim(),
+
+      // MAIN IMAGE
+      image: mainImage,
+
+      // ADDITIONAL IMAGES
+      gallery,
     });
 
     return res.status(201).json({
@@ -96,6 +151,7 @@ export const getLatestUpcomingProjects = async (req, res) => {
 
 /* =========================================================
    GET SINGLE UPCOMING PROJECT
+   Used in Detail Page
 ========================================================= */
 export const getUpcomingProjectById = async (req, res) => {
   try {
@@ -127,12 +183,16 @@ export const getUpcomingProjectById = async (req, res) => {
 
 /* =========================================================
    UPDATE UPCOMING PROJECT
+   Main Image + Gallery Images
 ========================================================= */
 export const updateUpcomingProject = async (req, res) => {
   try {
     const { id } = req.params;
     const { title, description, alt } = req.body;
 
+    // -----------------------------------------
+    // FIND PROJECT
+    // -----------------------------------------
     const project = await UpcomingProject.findByPk(id);
 
     if (!project) {
@@ -142,21 +202,56 @@ export const updateUpcomingProject = async (req, res) => {
       });
     }
 
+    // -----------------------------------------
+    // BASIC DATA
+    // -----------------------------------------
     const updateData = {
-      title: title || project.title,
+      title: title !== undefined && title.trim() ? title.trim() : project.title,
 
-      // Update description if it is sent from frontend
       description:
-        description !== undefined ? description : project.description,
+        description !== undefined
+          ? description.trim() || null
+          : project.description,
 
-      alt: alt || project.alt,
+      alt: alt !== undefined && alt.trim() ? alt.trim() : project.alt,
     };
 
-    // Update image only when a new image is uploaded
-    if (req.file) {
-      updateData.image = `/uploads/${req.file.filename}`;
+    // -----------------------------------------
+    // MAIN IMAGE
+    // Only update if new image uploaded
+    // -----------------------------------------
+    if (req.files?.image?.length > 0) {
+      updateData.image = getFilePath(req.files.image[0]);
     }
 
+    // -----------------------------------------
+    // GALLERY
+    // Only update if new gallery images uploaded
+    // -----------------------------------------
+    const galleryFiles = req.files?.gallery || [];
+
+    if (galleryFiles.length > 0) {
+      // Gallery must contain 4-6 images
+      if (galleryFiles.length < 4) {
+        return res.status(400).json({
+          success: false,
+          message: "Please upload at least 4 gallery images",
+        });
+      }
+
+      if (galleryFiles.length > 6) {
+        return res.status(400).json({
+          success: false,
+          message: "You can upload maximum 6 gallery images",
+        });
+      }
+
+      updateData.gallery = galleryFiles.map((file) => getFilePath(file));
+    }
+
+    // -----------------------------------------
+    // UPDATE
+    // -----------------------------------------
     await project.update(updateData);
 
     return res.status(200).json({

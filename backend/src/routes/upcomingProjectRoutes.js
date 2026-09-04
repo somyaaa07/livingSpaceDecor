@@ -1,6 +1,7 @@
 // routes/upcomingProjectRoutes.js
 
 import express from "express";
+
 import {
   createUpcomingProject,
   getUpcomingProjects,
@@ -10,33 +11,86 @@ import {
   deleteUpcomingProject,
 } from "../controllers/upcomingProjectController.js";
 
-// Apne existing multer upload middleware ka path use karo
 import upload from "../middleware/upload.js";
 
 const router = express.Router();
 
 /*
-  IMPORTANT:
-  /latest route ko /:id se PEHLE likhna hai,
-  warna Express "latest" ko id samajh sakta hai.
+=========================================================
+GET LATEST 4 PROJECTS
+Home Page
+IMPORTANT: /latest must come before /:id
+=========================================================
 */
-
-// GET latest 4 projects - Home Page
 router.get("/latest", getLatestUpcomingProjects);
 
-// GET all projects - Admin Panel
+/*
+=========================================================
+GET ALL PROJECTS
+Admin Panel
+=========================================================
+*/
 router.get("/", getUpcomingProjects);
 
-// GET single project
+/*
+=========================================================
+GET SINGLE PROJECT
+Details Page
+=========================================================
+*/
 router.get("/:id", getUpcomingProjectById);
 
-// CREATE project
-router.post("/", upload.single("image"), createUpcomingProject);
+/*
+=========================================================
+CREATE UPCOMING PROJECT
 
-// UPDATE project
-router.put("/:id", upload.single("image"), updateUpcomingProject);
+image   → 1 MAIN IMAGE
+gallery → 4-6 DETAIL IMAGES
+=========================================================
+*/
+router.post(
+  "/",
+  upload.fields([
+    {
+      name: "image",
+      maxCount: 1,
+    },
+    {
+      name: "gallery",
+      maxCount: 6,
+    },
+  ]),
+  createUpcomingProject,
+);
 
-// DELETE project
+/*
+=========================================================
+UPDATE UPCOMING PROJECT
+
+image   → optional main image
+gallery → optional 4-6 detail images
+=========================================================
+*/
+router.put(
+  "/:id",
+  upload.fields([
+    {
+      name: "image",
+      maxCount: 1,
+    },
+    {
+      name: "gallery",
+      maxCount: 6,
+    },
+  ]),
+  updateUpcomingProject,
+);
+
+/*
+=========================================================
+DELETE PROJECT
+=========================================================
+*/
 router.delete("/:id", deleteUpcomingProject);
 
 export default router;

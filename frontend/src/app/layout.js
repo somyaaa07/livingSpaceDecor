@@ -1,6 +1,7 @@
 import { Marcellus, Poppins } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
+import Script from "next/script";
 
 const marcellus = Marcellus({
   subsets: ["latin"],
@@ -67,11 +68,7 @@ export const metadata = {
     locale: "en_IN",
 
     type: "website",
-
-    
   },
-
- 
 };
 
 export default function RootLayout({ children }) {
@@ -82,6 +79,21 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen flex flex-col">
         <LayoutWrapper>{children}</LayoutWrapper>
+
+        {/* Google Ads Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17926113492"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17926113492');
+          `}
+        </Script>
       </body>
     </html>
   );
