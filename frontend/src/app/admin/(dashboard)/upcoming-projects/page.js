@@ -2513,10 +2513,10 @@ export default function UpcomingProjectsPage() {
         title.trim()
       );
 
-      formData.append(
-        "description",
-        description.trim()
-      );
+      // formData.append(
+      //   "description",
+      //   description.trim()
+      // );
 
       formData.append(
         "alt",
@@ -2611,9 +2611,9 @@ export default function UpcomingProjectsPage() {
     // Basic fields
     setTitle(project.title || "");
 
-    setDescription(
-      project.description || ""
-    );
+    // setDescription(
+    //   project.description || ""
+    // );
 
     setAlt(project.alt || "");
 
@@ -2764,14 +2764,14 @@ export default function UpcomingProjectsPage() {
             </p>
 
             <h1 className="text-2xl font-medium text-[#3D1F0D] sm:text-3xl md:text-4xl">
-              Upcoming Projects
+              New Trending Design
             </h1>
 
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#6B6B6B]">
-              Add and manage upcoming interior
+              Add and manage new trending  interior
               projects. The Home Page automatically
               displays the latest 4 uploaded projects.
-              Each project can contain up to 50 detail
+              Each project can contain up to 50 
               gallery images.
             </p>
 
@@ -2842,8 +2842,8 @@ export default function UpcomingProjectsPage() {
 
               <h2 className="text-lg font-medium text-[#3D1F0D] sm:text-xl">
                 {editingId
-                  ? "Edit Upcoming Project"
-                  : "Add Upcoming Project"}
+                  ? "Edit Trending Design"
+                  : "Add Trending Design"}
               </h2>
 
               <p className="mt-1 text-sm text-[#777]">
@@ -2901,7 +2901,7 @@ export default function UpcomingProjectsPage() {
 
                 {/* DESCRIPTION */}
 
-                <div>
+                {/* <div>
 
                   <label className="mb-2 block text-sm font-medium text-[#3D1F0D]">
                     Project Description *
@@ -2917,9 +2917,9 @@ export default function UpcomingProjectsPage() {
                     rows={6}
                     placeholder="Write complete details about this upcoming project..."
                     className="w-full resize-none rounded-xl border border-[#3D1F0D]/15 bg-[#FFFCF8] px-4 py-3 text-sm leading-relaxed text-[#3D1F0D] outline-none transition placeholder:text-gray-400 focus:border-[#C8972B]"
-                  />
+                  /> 
 
-                </div>
+                </div>*/}
 
                 {/* ALT TEXT */}
 
@@ -3311,7 +3311,7 @@ export default function UpcomingProjectsPage() {
           </p>
 
           <h2 className="mt-1 text-xl font-medium text-[#3D1F0D] sm:text-2xl">
-            All Upcoming Projects
+            All New Trending Design
           </h2>
 
         </div>
