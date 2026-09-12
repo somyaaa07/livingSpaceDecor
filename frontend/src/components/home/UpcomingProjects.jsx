@@ -175,7 +175,7 @@ export default function ProjectsSection() {
                 {/* CONTENT */}
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col gap-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-[9px] tracking-[0.2em] uppercase text-[#C8972B] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    Upcoming Project
+                    {/* Upcoming Project */} Trending Design
                   </span>
 
                   <h3 className="font-marcellus text-lg sm:text-xl lg:text-2xl text-white tracking-wide leading-tight">
