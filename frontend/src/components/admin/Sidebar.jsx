@@ -21,7 +21,7 @@ const NAV = [
   { href: "/admin/projects", label: "Portfolio Projects", icon: LayoutGrid },
   {
     href: "/admin/upcoming-projects",
-    label: "Upcoming Projects",
+    label: "Trending Design",
     icon: CalendarDays,
   },
   { href: "/admin/blogs", label: "Blog Posts", icon: Newspaper },
