@@ -1,3 +1,104 @@
+// // routes/upcomingProjectRoutes.js
+
+// import express from "express";
+
+// import {
+//   createUpcomingProject,
+//   getUpcomingProjects,
+//   getLatestUpcomingProjects,
+//   getUpcomingProjectById,
+//   updateUpcomingProject,
+//   deleteUpcomingProject,
+// } from "../controllers/upcomingProjectController.js";
+
+// import upload from "../middleware/upload.js";
+
+// const router = express.Router();
+
+// /*
+// =========================================================
+// GET LATEST 4 PROJECTS
+// Home Page
+// IMPORTANT: /latest must come before /:id
+// =========================================================
+// */
+// router.get("/latest", getLatestUpcomingProjects);
+
+// /*
+// =========================================================
+// GET ALL PROJECTS
+// Admin Panel
+// =========================================================
+// */
+// router.get("/", getUpcomingProjects);
+
+// /*
+// =========================================================
+// GET SINGLE PROJECT
+// Details Page
+// =========================================================
+// */
+// router.get("/:id", getUpcomingProjectById);
+
+// /*
+// =========================================================
+// CREATE UPCOMING PROJECT
+
+// image   → 1 MAIN IMAGE
+// gallery → 4-6 DETAIL IMAGES
+// =========================================================
+// */
+// router.post(
+//   "/",
+//   upload.fields([
+//     {
+//       name: "image",
+//       maxCount: 1,
+//     },
+//     {
+//       name: "gallery",
+//       maxCount: 6,
+//     },
+//   ]),
+//   createUpcomingProject,
+// );
+
+// /*
+// =========================================================
+// UPDATE UPCOMING PROJECT
+
+// image   → optional main image
+// gallery → optional 4-6 detail images
+// =========================================================
+// */
+// router.put(
+//   "/:id",
+//   upload.fields([
+//     {
+//       name: "image",
+//       maxCount: 1,
+//     },
+//     {
+//       name: "gallery",
+//       maxCount: 6,
+//     },
+//   ]),
+//   updateUpcomingProject,
+// );
+
+// /*
+// =========================================================
+// DELETE PROJECT
+// =========================================================
+// */
+// router.delete("/:id", deleteUpcomingProject);
+
+// export default router;
+
+
+
+// new design Route 
+
 // routes/upcomingProjectRoutes.js
 
 import express from "express";
@@ -45,7 +146,7 @@ router.get("/:id", getUpcomingProjectById);
 CREATE UPCOMING PROJECT
 
 image   → 1 MAIN IMAGE
-gallery → 4-6 DETAIL IMAGES
+gallery → 1-50 DETAIL IMAGES
 =========================================================
 */
 router.post(
@@ -57,7 +158,7 @@ router.post(
     },
     {
       name: "gallery",
-      maxCount: 6,
+      maxCount: 50,
     },
   ]),
   createUpcomingProject,
@@ -68,7 +169,12 @@ router.post(
 UPDATE UPCOMING PROJECT
 
 image   → optional main image
-gallery → optional 4-6 detail images
+gallery → optional 1-50 detail images
+
+If gallery is uploaded:
+existing gallery will be replaced.
+If gallery is not uploaded:
+existing gallery will remain unchanged.
 =========================================================
 */
 router.put(
@@ -80,7 +186,7 @@ router.put(
     },
     {
       name: "gallery",
-      maxCount: 6,
+      maxCount: 50,
     },
   ]),
   updateUpcomingProject,

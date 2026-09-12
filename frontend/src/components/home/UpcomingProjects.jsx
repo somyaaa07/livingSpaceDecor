@@ -117,11 +117,11 @@ export default function ProjectsSection() {
           <div>
             <p className="flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#C8972B] font-semibold mb-2">
               <span className="w-6 h-px bg-[#C8972B]" />
-              Upcoming Projects
+              {/* Upcoming Projects */} Trending Design
             </p>
 
             <h2 className="font-marcellus text-4xl sm:text-5xl text-[#3D1F0D] tracking-wide mt-2">
-              Our Upcoming Projects
+              {/* Our Upcoming Projects */} New Trending Design
             </h2>
           </div>
 
