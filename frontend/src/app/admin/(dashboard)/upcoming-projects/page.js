@@ -2447,10 +2447,10 @@ export default function UpcomingProjectsPage() {
       return;
     }
 
-    if (!description.trim()) {
-      alert("Please enter project description");
-      return;
-    }
+    // if (!description.trim()) {
+    //   alert("Please enter project description");
+    //   return;
+    // }
 
     // -------------------------------------------------------
     // MAIN IMAGE REQUIRED ON CREATE
