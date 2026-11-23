@@ -5,13 +5,13 @@ import CTA from "@/components/service/design-ideas/CTA";
 import FAQ from "@/components/service/design-ideas/FAQ";
 
 export const metadata = {
-  title: "Design Ideas - Living Space Decor",
+  title: "Interior Design Ideas for Every Room | Living Space Decor",
 
   description:
     "Explore modern interior design ideas for living rooms, bedrooms, kitchens, dining areas, home offices, and more. Get inspiration, expert tips, and stylish design solutions for your dream home.",
 
   alternates: {
-    canonical: "/design-ideas",
+    canonical: "/services/design-ideas",
   },
 };
 

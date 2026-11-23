@@ -1,3 +1,4 @@
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import ContactHeroSection from "@/components/contact/ContactHeroSection";
 import ContactForm from "@/components/contact/ContactForm";
 import GoogleMap from "@/components/contact/GoogleMap";
@@ -31,6 +32,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
+      <LocalBusinessSchema />
       <ContactHeroSection />
       <ContactForm />
       <GoogleMap />

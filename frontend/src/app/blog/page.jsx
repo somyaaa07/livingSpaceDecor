@@ -3,7 +3,12 @@ import BlogCard from "@/components/BlogCard";
 import GridPagination from "@/components/GridPagination";
 import Link from "next/link";
 
-export const metadata = { title: "Journal — Studio" };
+export const metadata = {
+  title: "Interior Design Blog – Ideas, Costs & Tips | Living Space Decor",
+  description:
+    "Interior design ideas, cost guides and material tips for homes in Noida, Greater Noida and Ghaziabad from the Living Space Decor design team.",
+  alternates: { canonical: "/blog" },
+};
 
 export default async function BlogPage({ searchParams }) {
   const { page: pageParam } = await searchParams;

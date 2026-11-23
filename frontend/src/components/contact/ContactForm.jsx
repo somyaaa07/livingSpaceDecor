@@ -418,7 +418,7 @@ export default function ContactSection() {
                       </p>
                       <p className="text-[#6E6258] text-base mt-1 group-hover/card:text-[#C8972B] transition-colors duration-300">
                         Shop-LGB 28, Galaxy Diamond Plaza Sector 4 Greater Noida
-                        West, Greater Noida, Uttar Pradesh 201009
+                        West, Greater Noida, Uttar Pradesh 201318
                       </p>
                     </div>
                     {/* <ArrowRight

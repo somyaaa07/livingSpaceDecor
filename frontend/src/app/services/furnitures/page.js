@@ -24,7 +24,7 @@ description:
   ],
 
   alternates: {
-    canonical: "/furnitures",
+    canonical: "/services/furnitures",
   },
 
   robots: {

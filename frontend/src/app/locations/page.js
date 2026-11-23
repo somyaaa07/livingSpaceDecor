@@ -145,6 +145,13 @@
 import { getLocations } from "@/lib/serverApi";
 import LocationsClient from "./LocationsClient";
 
+export const metadata = {
+  title: "Interior Designers Near You – Noida, Greater Noida, Ghaziabad | Living Space Decor",
+  description:
+    "Living Space Decor designs and executes home interiors across Noida, Greater Noida, Greater Noida West, Ghaziabad, Indirapuram and Vasundhara. Find your area.",
+  alternates: { canonical: "/locations" },
+};
+
 export default async function LocationsPage() {
   let locations = [];
 

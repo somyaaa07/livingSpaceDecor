@@ -19,7 +19,9 @@ export async function generateMetadata({ params }) {
     const { data: post } = await getBlog(slug);
 
     return {
-      title: `${post.title} | Living Space Decor`,
+      title: /living space decor/i.test(post.title)
+        ? post.title
+        : `${post.title} | Living Space Decor`,
       description: post.excerpt,
 
       keywords: post.tags || [

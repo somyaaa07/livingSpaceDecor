@@ -24,7 +24,7 @@ export default function GoogleMap() {
         <div className="overflow-hidden border border-[#C8972B]/20 shadow-sm">
           <iframe
             title="Office Location"
-            src="https://www.google.com/maps?q=Noida,India&output=embed"
+            src="https://www.google.com/maps?q=Living+Space+Decor,+Galaxy+Diamond+Plaza,+Sector+4,+Greater+Noida+Westhttps://www.google.com/maps?q=Noida,India&output=embedoutput=embed"
             width="100%"
             height="500"
             loading="lazy"
