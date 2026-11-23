@@ -29,7 +29,7 @@ description:
   ],
 
   alternates: {
-    canonical: "/wardrobes",
+    canonical: "/services/wardrobes",
   },
 
   robots: {

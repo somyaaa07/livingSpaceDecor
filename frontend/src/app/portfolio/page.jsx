@@ -3,7 +3,12 @@ import { getProjects } from "@/lib/serverApi";
 import ProjectCard from "@/components/ProjectCard";
 import GridPagination from "@/components/GridPagination";
 
-export const metadata = { title: "Portfolio — Studio" };
+export const metadata = {
+  title: "Interior Design Projects in Noida & Greater Noida | Living Space Decor",
+  description:
+    "See completed home and office interior projects by Living Space Decor across Noida, Greater Noida West and Ghaziabad – turnkey interiors, modular kitchens and wardrobes.",
+  alternates: { canonical: "/portfolio" },
+};
 
 export default async function PortfolioPage({ searchParams }) {
   const { page: pageParam } = await searchParams;

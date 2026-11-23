@@ -8,16 +8,15 @@ export default async function sitemap() {
 
   const staticRoutes = [
     "",
-    "about",
     "contact",
     "blog",
     "portfolio",
     "locations",
-    "services",
     "services/architecture",
     "services/furnitures",
     "services/turnkey-projects",
-    "wardrobes",
+    "services/wardrobes",
+    "services/design-ideas",
     "kitchen-design",
     "kitchen-calculator",
     "cost-calculator",

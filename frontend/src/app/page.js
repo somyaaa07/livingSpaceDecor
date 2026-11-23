@@ -1,3 +1,4 @@
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import HeroSection from "@/components/home/HeroSection";
 import Services from "@/components/home/Services";
 import Portfolio from "@/components/home/Portfolio";
@@ -8,6 +9,12 @@ import WhyChoose from "@/components/home/WhyChoose";
 import UpcomingProjects from "@/components/home/UpcomingProjects";
 import { getProjects } from "@/lib/serverApi";
 
+export const metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
+
 export default async function Home() {
 
   const { data: projects } = await getProjects({
@@ -16,6 +23,7 @@ export default async function Home() {
   });
   return (
     <>
+      <LocalBusinessSchema />
       <HeroSection />
       <Services />
       <UpcomingProjects/>

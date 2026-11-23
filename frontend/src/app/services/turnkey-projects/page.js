@@ -22,7 +22,7 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "/turnkey-projects",
+    canonical: "/services/turnkey-projects",
   },
 
   robots: {

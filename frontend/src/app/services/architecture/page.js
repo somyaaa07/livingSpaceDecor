@@ -20,7 +20,7 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "/architecture",
+    canonical: "/services/architecture",
   },
 
   robots: {

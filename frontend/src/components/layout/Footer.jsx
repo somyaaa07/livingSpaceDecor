@@ -450,7 +450,7 @@ export default function Footer() {
 
             <ContactRow
               label="Studio"
-              value="Shop-LGB 28, Galaxy Diamond Plaza Sector 4 Greater Noida West, Greater Noida, Uttar Pradesh 201009"
+              value="Shop-LGB 28, Galaxy Diamond Plaza Sector 4 Greater Noida West, Greater Noida, Uttar Pradesh 201318"
               icon={
                 <svg
                   width="16"

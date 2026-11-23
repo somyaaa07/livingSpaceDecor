@@ -39,10 +39,6 @@ export const metadata = {
     "Living Space Decor",
   ],
 
-  alternates: {
-    canonical: "/",
-  },
-
   robots: {
     index: true,
     follow: true,
